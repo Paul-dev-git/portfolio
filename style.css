@@ -116,14 +116,13 @@ body{
     z-index: 1001;
 }
 
-/* Content nach unten verschieben, Container mittig */
 .main-container,
 .skills-container {
     margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
-    max-width: 525px;
+    width: min(525px, 92%);
+    padding: 20px;
 }
 
 /* Text linksbündig */
@@ -494,3 +493,27 @@ img {
     height: auto;
 }
 
+/* =========================================================
+   MOBILE HEADER FIX
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 20px;
+    }
+
+    .darkmode-toggle {
+        position: fixed;
+        top: 90px;
+        left: 20px;
+    }
+
+}
