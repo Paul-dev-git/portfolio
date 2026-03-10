@@ -517,3 +517,13 @@ img {
     }
 
 }
+
+@media (max-width: 600px) {
+
+    .main-container,
+    .skills-container {
+        width: calc(100% - 40px);
+        margin-top: 140px;
+    }
+
+}
