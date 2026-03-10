@@ -119,10 +119,11 @@ body{
 /* Content nach unten verschieben, Container mittig */
 .main-container,
 .skills-container {
-    margin-top: 120px; /* Höhe Navbar + Toggle */
+    margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
-    width: 525px;
+    width: 90%;
+    max-width: 525px;
 }
 
 /* Text linksbündig */
@@ -422,3 +423,74 @@ p {
     justify-content: left;
     flex-wrap: wrap;
 }
+
+/* =========================================================
+   11. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nav-item {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+
+    .nav-item img.nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .darkmode-toggle {
+        left: 15px;
+        top: 20px;
+    }
+
+    .navbar {
+        top: 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    button {
+        font-size: 15px;
+        padding: 8px 10px;
+        margin-left: 15px;
+    }
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
