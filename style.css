@@ -181,17 +181,10 @@ button {
     margin-left: 30px;
     margin-top: 30px;
     margin-bottom: 20px;
-    transition: transform 0.2s ease,
-    background-color 0.4s ease,
-    box-shadow 0.4s ease;
 }
 
 button:hover {
     background-color: #0873ec;
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
-    0 0 20px rgba(0, 122, 255, 0.5),
-    0 0 30px rgba(0, 122, 255, 0.5);
 }
 
 .itchio-button {
@@ -254,6 +247,7 @@ p {
     background-color: var(--surface-color);
     border-radius: 15px;
     border: 2px solid rgba(45, 148, 255, 0.32);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .grid-item img {
@@ -265,6 +259,15 @@ p {
     margin: 0;
     font-size: 18px;
     color: var(--text-color);
+}
+
+/* Hover Animation für Grid Items */
+.grid-item:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
+    0 0 20px rgba(0, 122, 255, 0.5),
+    0 0 30px rgba(0, 122, 255, 0.5);
+    border: 2px solid rgba(0, 122, 255, 0.78);
 }
 
 /* =========================================================
@@ -301,7 +304,17 @@ p {
     color:var(--color-primary);
 }
 
+.nav-item.active img.nav-icon{
+    filter: brightness(0) saturate(100%)
+    invert(42%) sepia(98%) saturate(2592%)
+    hue-rotate(199deg) brightness(101%) contrast(101%);
+}
+
 [data-theme="dark"] .nav-item:not(.active) img.nav-icon{
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .main-image {
     filter: brightness(0) invert(1);
 }
 
@@ -317,8 +330,12 @@ p {
 
 .mode-icon.active{
     filter: brightness(0) saturate(100%)
-    invert(36%) sepia(88%) saturate(2596%)
-    hue-rotate(193deg) brightness(94%) contrast(95%);
+    invert(42%) sepia(98%) saturate(2592%)
+    hue-rotate(199deg) brightness(101%) contrast(101%);
+}
+
+[data-theme="dark"] .mode-icon.light{
+    filter: brightness(0) invert(1);
 }
 
 .selector{
@@ -379,10 +396,6 @@ p {
     }
 
 }
-
-/* =========================================================
-   MOBILE HEADER + SPACING
-   ========================================================= */
 
 @media (max-width: 768px) {
 
