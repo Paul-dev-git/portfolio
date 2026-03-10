@@ -1,0 +1,335 @@
+/* =========================================================
+   1. ROOT VARIABLES (COLOR SYSTEM)
+   ========================================================= */
+
+:root {
+
+    --color-bg-light: rgba(245, 245, 250, 0.55);
+    --color-bg-dark: #1c1c1e;
+
+    --color-surface-light: #ffffff;
+    --color-surface-dark: #2c2c2e;
+
+    --color-text-light: #232323;
+    --color-text-dark: #f2f2f7;
+
+    --color-primary: #007AFF;
+
+    --color-hover-light: rgba(152,152,170,0.17);
+    --color-hover-dark: rgba(255,255,255,0.08);
+
+    --color-shadow: rgba(0,0,0,0.2);
+
+    /* Active theme variables */
+
+    --background-color: var(--color-bg-light);
+    --surface-color: var(--color-surface-light);
+    --text-color: var(--color-text-light);
+    --nav-active-bg: var(--color-hover-light);
+
+    --grid-color-light: rgba(0, 0, 0, 0.04);
+    --grid-color-dark: rgba(255, 255, 255, 0.03);
+
+    --grid-size: 40px;
+    --grid-cross: 2px;
+
+    --grid-color: var(--grid-color-light);
+}
+
+
+/* =========================================================
+   2. DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] {
+
+    --background-color: var(--color-bg-dark);
+    --surface-color: var(--color-surface-dark);
+    --text-color: var(--color-text-dark);
+    --nav-active-bg: var(--color-hover-dark);
+    --grid-color: var(--grid-color-dark);
+}
+
+
+/* =========================================================
+   3. BASE
+   ========================================================= */
+
+body{
+    margin:0;
+    font-family: 'Inter', Arial, sans-serif;
+
+    background-color:var(--background-color);
+
+    background-image:
+
+        /* horizontale Liniensegmente (für Kreuz) */
+            repeating-linear-gradient(
+                    0deg,
+                    transparent 0 calc(var(--grid-size) - var(--grid-cross)/2),
+                    var(--grid-color) calc(var(--grid-size) - var(--grid-cross)/2) calc(var(--grid-size) + var(--grid-cross)/2),
+                    transparent calc(var(--grid-size) + var(--grid-cross)/2) var(--grid-size)
+            ),
+
+                /* vertikale Liniensegmente (für Kreuz) */
+            repeating-linear-gradient(
+                    90deg,
+                    transparent 0 calc(var(--grid-size) - var(--grid-cross)/2),
+                    var(--grid-color) calc(var(--grid-size) - var(--grid-cross)/2) calc(var(--grid-size) + var(--grid-cross)/2),
+                    transparent calc(var(--grid-size) + var(--grid-cross)/2) var(--grid-size)
+            );
+}
+
+
+/* =========================================================
+   4. LAYOUT
+   ========================================================= */
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:sticky;
+    margin-top:30px;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    z-index:1000;
+}
+
+.nav-container{
+    display:flex;
+    justify-content:space-between;
+    padding:5px;
+    background:var(--surface-color);
+    border-radius:90px;
+    box-shadow:6px 6px 20px 0 var(--color-shadow);
+}
+
+.main-container{
+    width: 525px;
+    padding: 15px;
+    margin: 60px auto 0;
+    background-color:var(--surface-color);
+    border-radius: 25px;
+    box-shadow:4px 4px 30px 0 var(--color-shadow);
+
+    animation: flyIn 0.8s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+@keyframes flyIn {
+    from{
+        transform: translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+.main-text{
+    padding-left: 30px;
+    color:var(--text-color);
+}
+
+.main-image{
+    width: 32px;
+    position: relative;
+    top: 8px;
+}
+
+.github-icon{
+    width:32px;
+    filter: brightness(0) invert(1);
+}
+
+.arrow{
+    width: 16px;
+    filter: brightness(0) invert(1);
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-size:16px;
+
+    color: white;
+    background-color: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 3px 3px 15px 0 var(--color-shadow);
+
+    padding: 6px 10px;
+
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    transition: transform 0.2s ease, background-color 0.4s;
+}
+
+button:hover {
+    background-color: #0873ec;
+    transition-duration: 0.4s;
+    transform: scale(1.05) rotate(2deg);
+}
+
+a{
+    text-decoration: none;
+}
+
+h1 {
+    padding-bottom: 20px;
+}
+
+.link {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   5. NAVIGATION ITEMS
+   ========================================================= */
+
+.nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:5px 40px;
+
+    text-decoration:none;
+    color:var(--text-color);
+
+    font-weight:700;
+    font-size:12px;
+
+    position:relative;
+    z-index:1;
+}
+
+.nav-item img.nav-icon{
+    width:24px;
+    height:24px;
+    margin-bottom:5px;
+
+    /* Light mode default (black icons) */
+    filter:none;
+}
+
+
+/* Active navigation item */
+
+.nav-item.active{
+    background:var(--nav-active-bg);
+    border-radius:90px;
+    color:var(--color-primary);
+}
+
+.nav-item.active img.nav-icon{
+    filter: invert(35%) sepia(94%) saturate(5179%)
+    hue-rotate(192deg) brightness(96%) contrast(97%);
+}
+
+
+/* =========================================================
+   6. DARK MODE ICON COLORS
+   ========================================================= */
+
+/* Only NON-active icons become white */
+
+[data-theme="dark"] .nav-item:not(.active) img.nav-icon{
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .mode-icon:not(.active){
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .main-image{
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================================
+   7. DARKMODE TOGGLE
+   ========================================================= */
+
+.darkmode-toggle{
+
+    position:absolute;
+    left:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:60px;
+    height:23px;
+
+    padding:10px;
+
+    background-color:var(--surface-color);
+
+    border-radius:90px;
+    box-shadow:6px 6px 20px 0 var(--color-shadow);
+
+    cursor:pointer;
+}
+
+
+/* Toggle icons */
+
+.mode-icon{
+    height:25px;
+    width:25px;
+    margin:0 5px;
+
+    transition:color 0.3s;
+
+    z-index:2;
+
+    filter:none;
+}
+
+
+/* Active toggle icon (blue) */
+
+.mode-icon.active{
+    filter: brightness(0) saturate(100%)
+    invert(36%) sepia(88%) saturate(2596%)
+    hue-rotate(193deg) brightness(94%) contrast(95%);
+}
+
+
+/* =========================================================
+   8. TOGGLE SELECTOR
+   ========================================================= */
+
+.selector{
+
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:35px;
+    height:35px;
+
+    background-color:var(--nav-active-bg);
+
+    border-radius:50%;
+
+    transition:left 0.3s;
+
+    z-index:1;
+}
