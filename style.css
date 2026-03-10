@@ -19,7 +19,6 @@
 
     --color-shadow: rgba(0,0,0,0.2);
 
-    /* Active theme variables */
     --background-color: var(--color-bg-light);
     --surface-color: var(--color-surface-light);
     --text-color: var(--color-text-light);
@@ -69,11 +68,15 @@ body{
             );
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* =========================================================
    4. LAYOUT
    ========================================================= */
 
-/* Top-Bar transparent, Abstand oben */
 .top-bar {
     display: flex;
     align-items: center;
@@ -84,10 +87,9 @@ body{
     z-index: 1000;
 }
 
-/* Navbar fixiert */
 .navbar {
     position: fixed;
-    top: 30px; /* gleiche Höhe wie top-bar margin */
+    top: 30px;
     display: flex;
     justify-content: center;
     width: auto;
@@ -98,7 +100,6 @@ body{
     box-shadow: 6px 6px 20px 0 var(--color-shadow);
 }
 
-/* Darkmode Toggle fixiert */
 .darkmode-toggle {
     position: fixed;
     top: 30px;
@@ -121,21 +122,7 @@ body{
     margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
-    width: min(525px, 92%);
-    padding: 20px;
-}
-
-/* Text linksbündig */
-.main-container *,
-.skills-container * {
-    text-align: left;
-}
-
-.nav-container{
-    display:flex;
-    justify-content:space-between;
-    padding-left:5px;
-    padding-right:5px;
+    max-width: 525px;
 }
 
 /* =========================================================
@@ -208,32 +195,11 @@ button:hover {
 }
 
 .itchio-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 17px;
-    color: white;
     background-color: #FA5C5C;
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-    box-shadow: 3px 3px 15px 0 var(--color-shadow);
-    padding: 6px 10px;
-    margin-left: 30px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    transition: transform 0.2s ease,
-    background-color 0.4s ease,
-    box-shadow 0.4s ease;
 }
 
 .itchio-button:hover {
     background-color: #ec5353;
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(250, 92, 92, 0.45),
-    0 0 20px rgba(250, 92, 92, 0.45),
-    0 0 30px rgba(250, 92, 92, 0.45);
 }
 
 a{
@@ -276,40 +242,22 @@ p {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
 }
 
 .grid-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     padding: 10px;
     background-color: var(--surface-color);
     border-radius: 15px;
     border: 2px solid rgba(45, 148, 255, 0.32);
-    transition: transform 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
-    box-shadow: 0 0 5px rgba(0, 122, 255, 0.1),
-    0 0 10px rgba(0, 122, 255, 0.1),
-    0 0 15px rgba(0, 122, 255, 0.1);
-}
-
-.grid-item:hover {
-    transform: translateY(-5px) rotate(2deg);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
-    0 0 20px rgba(0, 122, 255, 0.5),
-    0 0 30px rgba(0, 122, 255, 0.5);
-    border: 2px solid rgba(0, 125, 255, 0.78);
 }
 
 .grid-item img {
     max-width: 50px;
-    height: auto;
     margin-bottom: 10px;
 }
 
@@ -320,8 +268,15 @@ p {
 }
 
 /* =========================================================
-   7. NAVIGATION ITEMS
+   7. NAVIGATION
    ========================================================= */
+
+.nav-container{
+    display:flex;
+    justify-content:space-between;
+    padding-left:5px;
+    padding-right:5px;
+}
 
 .nav-item{
     display:flex;
@@ -332,15 +287,12 @@ p {
     color:var(--text-color);
     font-weight:700;
     font-size:16px;
-    position:relative;
-    z-index:1;
 }
 
 .nav-item img.nav-icon{
     width:24px;
     height:24px;
     margin-bottom:5px;
-    filter:none;
 }
 
 .nav-item.active{
@@ -349,50 +301,18 @@ p {
     color:var(--color-primary);
 }
 
-.nav-item.active img.nav-icon{
-    filter: invert(35%) sepia(94%) saturate(5179%)
-    hue-rotate(192deg) brightness(96%) contrast(97%);
-}
-
-/* =========================================================
-   8. DARK MODE ICON COLORS
-   ========================================================= */
-
 [data-theme="dark"] .nav-item:not(.active) img.nav-icon{
     filter: brightness(0) invert(1);
 }
 
-[data-theme="dark"] .mode-icon:not(.active){
-    filter: brightness(0) invert(1);
-}
-
-[data-theme="dark"] .main-image{
-    filter: brightness(0) invert(1);
-}
-
 /* =========================================================
-   9. DARKMODE TOGGLE
+   8. DARKMODE TOGGLE
    ========================================================= */
 
-.darkmode-toggle{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:60px;
-    height:23px;
-    padding:10px;
-    border-radius:90px;
-    cursor:pointer;
-}
-
-/* Toggle icons */
 .mode-icon{
     height:25px;
     width:25px;
     margin:0 5px;
-    transition:color 0.3s;
-    z-index:2;
-    filter:none;
 }
 
 .mode-icon.active{
@@ -400,10 +320,6 @@ p {
     invert(36%) sepia(88%) saturate(2596%)
     hue-rotate(193deg) brightness(94%) contrast(95%);
 }
-
-/* =========================================================
-   10. TOGGLE SELECTOR
-   ========================================================= */
 
 .selector{
     position:absolute;
@@ -414,17 +330,20 @@ p {
     background-color:var(--nav-active-bg);
     border-radius:50%;
     transition:left 0.3s;
-    z-index:1;
-}
-
-.buttons {
-    display:flex;
-    justify-content: left;
-    flex-wrap: wrap;
 }
 
 /* =========================================================
-   11. RESPONSIVE DESIGN
+   9. BUTTON CONTAINER
+   ========================================================= */
+
+.buttons {
+    display:flex;
+    justify-content:left;
+    flex-wrap:wrap;
+}
+
+/* =========================================================
+   10. RESPONSIVE DESIGN
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -441,18 +360,6 @@ p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-}
-
-@media (max-width: 500px) {
-
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media (max-width: 700px) {
-
     .nav-item {
         padding: 5px 15px;
         font-size: 14px;
@@ -465,64 +372,34 @@ p {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
-    .darkmode-toggle {
-        left: 15px;
-        top: 20px;
+    .grid-container {
+        grid-template-columns: 1fr;
     }
 
-    .navbar {
-        top: 20px;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    button {
-        font-size: 15px;
-        padding: 8px 10px;
-        margin-left: 15px;
-    }
-
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
 /* =========================================================
-   MOBILE HEADER FIX
+   MOBILE HEADER + SPACING
    ========================================================= */
 
-@media (max-width: 600px) {
-
-    .top-bar {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-    }
+@media (max-width: 768px) {
 
     .navbar {
-        position: fixed;
         top: 20px;
     }
 
     .darkmode-toggle {
         position: fixed;
-        top: 90px;
+        top: 85px;
         left: 20px;
     }
 
-}
-
-@media (max-width: 600px) {
-
     .main-container,
     .skills-container {
-        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
         margin-top: 140px;
     }
 
