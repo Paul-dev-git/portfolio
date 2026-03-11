@@ -430,12 +430,20 @@ p {
         height: 20px;
     }
 
+    p {
+        font-size: 14px;
+    }
+
 }
 
 @media (max-width: 500px) {
 
     .grid-container {
         grid-template-columns: 1fr;
+    }
+
+    p{
+        font-size: 14px;
     }
 
 }
@@ -448,8 +456,9 @@ p {
 
     .darkmode-toggle {
         position: fixed;
+        left: 43%;
         top: 85px;
-        left: 20px;
+        margin-top: 10px;
     }
 
     .main-container,
@@ -457,6 +466,10 @@ p {
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 140px;
+    }
+
+    p {
+        font-size: 14px;
     }
 
 }
