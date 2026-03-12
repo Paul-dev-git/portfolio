@@ -4,7 +4,7 @@
 
 :root {
     --color-bg-light: rgb(245, 246, 250);
-    --color-bg-dark: #1b1b20;
+    --color-bg-dark: #0f0f12;
 
     --color-surface-light: rgba(255, 255, 255, 0.4);
     --color-surface-dark: rgba(37, 37, 43, 0.4);
@@ -18,7 +18,7 @@
     --color-hover-dark: rgba(255,255,255,0.08);
 
     --color-shadow-light: rgba(0, 122, 255, 0.3);
-    --color-shadow-dark: rgba(0, 122, 255, 0.13);
+    --color-shadow-dark: rgba(0, 122, 255, 0.2);
 
     --background-color: var(--color-bg-light);
     --surface-color: var(--color-surface-light);
@@ -78,10 +78,6 @@ body::before{
     background-size: var(--grid-size) var(--grid-size);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 .footer-container{
     display:flex;
@@ -141,12 +137,14 @@ img {
 }
 
 .main-container,
-.skills-container {
-    margin-top: 120px;
+.skills-container,
+.project-container {
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     max-width: 600px;
     backdrop-filter: blur(2px);
+    z-index: 5;
 }
 
 /* =========================================================
@@ -154,6 +152,7 @@ img {
    ========================================================= */
 
 .main-container{
+    margin-top: 120px;
     padding: 15px;
     background-color: var(--surface-color);
     border-radius: 25px;
@@ -165,6 +164,37 @@ img {
 
 .main-container:hover{
     box-shadow: 10px 10px 30px 0 var(--color-shadow);
+}
+
+.project-container{
+    display: flex;
+    padding: 15px;
+    background-color: var(--surface-color);
+    border-radius: 25px;
+    border: 1px solid var(--color-border);
+    animation: flyIn 0.8s ease forwards;
+    animation-delay: 0.4s;
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+.project-container:hover{
+    box-shadow: 10px 10px 30px 0 var(--color-shadow);
+}
+
+.project-container:hover .project-image{
+    transform: rotate(1deg) scale(1.002);
+}
+
+.project-image{
+    margin: 10px;
+    width: 55%;
+    z-index: 5;
+    border-radius: 15px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.project-info{
+    width: 500px;
 }
 
 @keyframes flyIn {
@@ -190,6 +220,11 @@ img {
 
 .arrow{
     width: 16px;
+}
+
+/* Icons im Dark Mode weiß */
+[data-theme="dark"] .button-icon,
+[data-theme="dark"] .arrow {
     filter: brightness(0) invert(1);
 }
 
@@ -199,12 +234,12 @@ button {
     justify-content: center;
     gap: 10px;
     font-size: 17px;
-    color: white;
-    background-color: var(--color-primary);
-    border: none;
+    font-family: monospace;
+    color: var(--text-color);
+    background-color: var(--surface-color);
+    border: 1px solid var(--color-border);
     cursor: pointer;
     border-radius: 15px;
-    box-shadow: 3px 3px 15px 0 var(--color-shadow);
     padding: 6px 10px;
     margin-left: 30px;
     margin-top: 30px;
@@ -214,14 +249,28 @@ button {
 
 button:hover {
     background-color: #0873ec;
+    border: none;
+    color: white;
     transform: scale(1.05) rotate(2deg);
     box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
     0 0 20px rgba(0, 122, 255, 0.5),
     0 0 30px rgba(0, 122, 255, 0.5);
 }
 
+button:hover .button-icon{
+    filter: brightness(0) invert(1);
+}
+
+button:hover .arrow{
+    filter: brightness(0) invert(1);
+}
+
+.button-icon {
+    width: 32px;
+}
+
 .itchio-button {
-    background-color: #FA5C5C;
+    background-color: var(--surface-color);
     transition: transform 0.3s ease, color 0.3s, box-shadow 0.3s;
 }
 
@@ -312,6 +361,48 @@ p {
     0 0 30px rgba(0, 122, 255, 0.5);
     border: 2px solid rgba(0, 122, 255, 0.78);
 }
+
+.languages-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 35px 0;
+}
+
+.language-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    margin-left: 5px;
+    margin-top: -30px;
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.language-item img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.language-item p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+/* Hover Animation für Grid Items */
+.language-item:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
+    0 0 20px rgba(0, 122, 255, 0.5),
+    0 0 30px rgba(0, 122, 255, 0.5);
+    border: 2px solid rgba(0, 122, 255, 0.78);
+}
+
 
 /* =========================================================
    7. NAVIGATION
@@ -493,4 +584,145 @@ p {
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
+}
+
+.blue {
+    color: var(--color-primary);
+    font-size: 130%;
+    text-shadow:
+            0 0 5px rgba(0, 122, 255, 0.3),
+            0 0 10px rgba(0, 122, 255, 0.2),
+            0 0 20px rgba(0, 122, 255, 0.1);
+}
+
+
+
+/* CURSOR */
+.cursor-glow {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 250px;
+
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+
+    background: radial-gradient(
+            circle,
+            rgba(0, 122, 255, 0.3),
+            rgba(0, 122, 255, 0.15),
+            rgba(0, 122, 255, 0.05),
+            rgba(0, 122, 255, 0.001),
+            rgba(0, 122, 255, 0)
+    );
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* COMETS */
+body {
+    margin: 0;
+    height: 200vh;
+}
+
+.comets {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.comet {
+    position: absolute;
+    width: 180px;
+    height: 2px;
+
+    background: linear-gradient(
+            90deg,
+            rgba(0, 122, 255, 0.02),
+            rgb(0, 122, 255)
+    );
+
+    transform: rotate(45deg);
+    animation: cometMove 6s linear infinite;
+}
+
+/* Verschiedene Startpositionen */
+.comet:nth-child(1) {
+    top: -20%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.comet:nth-child(2) {
+    top: -10%;
+    left: -30%;
+    animation-delay: 1s;
+}
+
+.comet:nth-child(3) {
+    top: -30%;
+    left: -5%;
+    animation-delay: 2s;
+}
+
+.comet:nth-child(4) {
+    top: -40%;
+    left: -20%;
+    animation-delay: 1.5s;
+}
+
+@keyframes cometMove {
+    from {
+        transform: translate(0, 0) rotate(30deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(120vw, 120vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+
+/* Standard-Cursor ausblenden */
+body {
+    cursor: none;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+label {
+    cursor: none;
+}
+
+/* Blob */
+.cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 123, 255, 0.35);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* größer beim Hover über interaktive Elemente */
+.cursor.hover {
+    width: 28px;
+    height: 28px;
+}
+
+::selection {
+    background: rgba(0, 123, 255, 0.1);
 }
