@@ -188,6 +188,7 @@ body::before{
 .project-image{
     margin: 10px;
     width: 55%;
+    height: 55%;
     z-index: 5;
     border-radius: 15px;
     transition: transform 0.4s ease-in-out;
@@ -195,6 +196,16 @@ body::before{
 
 .project-info{
     width: 500px;
+}
+
+.project-info-text{
+    margin-left: 20px;
+    color: var(--text-color);
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: row;
 }
 
 @keyframes flyIn {
@@ -280,6 +291,23 @@ button:hover .arrow{
     box-shadow: 0 0 10px rgba(236, 83, 83, 0.4),
     0 0 20px rgba(236, 83, 83, 0.4),
     0 0 30px rgba(236, 83, 83, 0.4);
+}
+
+.project-button1 {
+    margin-left: 10px;
+}
+.project-button2 {
+    margin-left: 5px;
+}
+
+.project-button2:hover {
+    background-color: #ff2c11;
+    border: none;
+    color: white;
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 10px rgba(255, 44, 17, 0.5),
+    0 0 20px rgba(255, 44, 17, 0.5),
+    0 0 30px rgba(255, 44, 17, 0.5);
 }
 
 a{
