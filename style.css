@@ -27,7 +27,7 @@
 
     --grid-color-light: rgb(206, 210, 223);
     --grid-color-dark: rgb(44, 45, 50);
-    
+
     --border-color-light: rgba(97, 106, 110, 0.33);
     --border-color-dark: rgb(54, 54, 57);
 
@@ -172,13 +172,7 @@ body::before{
     background-color: var(--surface-color);
     border-radius: 25px;
     border: 1px solid var(--color-border);
-    animation: flyIn 0.8s ease forwards;
-    animation-delay: 0.4s;
     transition: box-shadow 0.4s ease-in-out;
-}
-
-.project-container:hover{
-    box-shadow: 10px 10px 30px 0 var(--color-shadow);
 }
 
 .project-container:hover .project-image{
@@ -301,13 +295,13 @@ button:hover .arrow{
 }
 
 .project-button2:hover {
-    background-color: #ff2c11;
+    background-color: #bc11ff;
     border: none;
     color: white;
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(255, 44, 17, 0.5),
-    0 0 20px rgba(255, 44, 17, 0.5),
-    0 0 30px rgba(255, 44, 17, 0.5);
+    box-shadow: 0 0 10px rgba(188, 17, 255, 0.5),
+    0 0 20px rgba(188, 17, 255, 0.5),
+    0 0 30px rgba(188, 17, 255, 0.5);
 }
 
 a{
@@ -753,4 +747,75 @@ label {
 
 ::selection {
     background: rgba(0, 123, 255, 0.1);
+}
+/* =========================================================
+   PROJECTS CAROUSEL FINAL FIX
+   ========================================================= */
+
+.projects-carousel {
+    position: relative;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 600px; /* 1 Karte breit */
+    /* NICHT overflow: hidden; mehr */
+}
+
+.projects-wrapper {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;   /* Scroll nur hier */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0 0;       /* kein extra Padding nötig */
+    box-sizing: border-box;
+}
+
+/* Scrollbar unsichtbar */
+.projects-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.projects-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.project-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+}
+
+/* Buttons sauber links und rechts außerhalb der Cards */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: var(--surface-color);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Buttons immer innerhalb des Carousels, nicht abgeschnitten */
+.carousel-btn.prev {
+    left: -80px; /* Buttons links neben Carousel */
+}
+
+.carousel-btn.next {
+    right: -50px; /* Buttons rechts neben Carousel */
 }

@@ -95,3 +95,18 @@ hoverElements.forEach(el => {
     el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
     el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
 });
+const prevBtn = document.querySelector(".carousel-btn.prev");
+const nextBtn = document.querySelector(".carousel-btn.next");
+const cards = document.querySelectorAll(".project-card");
+
+let index = 0;
+
+nextBtn.addEventListener("click", () => {
+    index = Math.min(index + 1, cards.length - 1);
+    cards[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+});
+
+prevBtn.addEventListener("click", () => {
+    index = Math.max(index - 1, 0);
+    cards[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+});
