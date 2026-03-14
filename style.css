@@ -61,6 +61,7 @@ body{
     margin:0;
     font-family: monospace;
     background-color:var(--background-color);
+    transition: background-color 0.25s ease-in-out;
 }
 
 body::before{
@@ -818,4 +819,41 @@ label {
 
 .carousel-btn.next {
     right: -50px; /* Buttons rechts neben Carousel */
+}
+
+
+.lang-progress-wrapper {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding-top: 15px;
+}
+
+.lang-progress-container {
+    width: 60px;
+    background: var(--surface-color);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 3px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-progress-bar {
+    height: 16px;
+    background: var(--color-primary);
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.25),
+    0 0 20px rgba(0, 122, 255, 0.25),
+    0 0 30px rgba(0, 122, 255, 0.25);
+    border-radius: 20px;
+}
+
+.lang-progress-label {
+    font-size: 14px;
+    color: var(--text-color);
+    white-space: nowrap;
+    margin-left: 10px;
 }
