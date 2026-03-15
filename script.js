@@ -2,8 +2,6 @@ const toggle = document.querySelector('.darkmode-toggle');
 const selector = toggle.querySelector('.selector');
 const icons = toggle.querySelectorAll('.mode-icon');
 
-/* gespeichertes Theme laden */
-
 let savedTheme = localStorage.getItem("theme");
 
 let isDarkMode = savedTheme === "dark";
@@ -33,13 +31,8 @@ function updateToggle() {
 
     document.documentElement.setAttribute("data-theme", theme);
 
-    /* Theme speichern */
-
     localStorage.setItem("theme", theme);
 }
-
-
-/* Toggle Klick */
 
 toggle.addEventListener("click", () => {
 
@@ -48,9 +41,6 @@ toggle.addEventListener("click", () => {
     updateToggle();
 
 });
-
-
-/* Beim Laden der Seite anwenden */
 
 updateToggle();
 
