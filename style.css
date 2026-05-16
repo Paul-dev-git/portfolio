@@ -8,8 +8,8 @@
     --color-bg-light: rgb(241, 242, 249);
     --color-bg-dark: #070712;
 
-    --color-surface-light: rgba(255, 255, 255, 0.4);
-    --color-surface-dark: rgba(46, 46, 55, 0.4);
+    --color-surface-light: rgb(255 255 255 / 0.35);
+    --color-surface-dark: rgb(46 46 55 / 0.35);
 
     --color-second-surface-light: rgb(241, 242, 249);
     --color-second-surface-dark: rgba(57, 61, 71, 0.4);
@@ -124,7 +124,7 @@ body::before{
     width: auto;
     z-index: 1000;
     background-color: var(--surface-color);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(3px);
     padding: 5px 0;
     border: 1px solid var(--color-border);
     border-radius: 90px;
