@@ -33,7 +33,7 @@
     --nav-active-bg: rgba(186, 214, 250, 0.2);
 
     --grid-color-light: rgb(206, 210, 223);
-    --grid-color-dark: rgb(44, 45, 50);
+    --grid-color-dark: rgb(27 28 35);
 
     --border-color-light: rgba(194, 203, 207, 0.33);
     --border-color-dark: rgb(38, 38, 41);
@@ -417,7 +417,7 @@ button:hover .live-button-icon{
 
 .title-text {
     font-size: 45px;
-    margin-top: 20px;
+    margin-top: 30px;
     color: var(--text-color);
 }
 
