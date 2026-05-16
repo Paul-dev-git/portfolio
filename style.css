@@ -58,6 +58,10 @@
     --grid-color: var(--grid-color-dark);
     --color-border: var(--border-color-dark);
     --color-shadow: var(--color-shadow-dark);
+
+    .blog-icon{
+        filter: invert(100%);
+    }
 }
 
 /* =========================================================
