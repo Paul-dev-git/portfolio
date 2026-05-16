@@ -181,23 +181,17 @@ body::before{
 
 .project-container{
     display: flex;
-    padding: 15px;
     background-color: var(--surface-color);
     border-radius: 25px;
     border: 1px solid var(--color-border);
-    transition: box-shadow 0.4s ease-in-out;
-}
-
-.project-container:hover .project-image{
-    transform: rotate(1deg) scale(1.002);
+    transition: box-shadow, border-color 0.4s ease-in-out;
 }
 
 .project-image{
-    margin: 10px;
-    width: 55%;
-    height: 55%;
+    width: 50%;
     z-index: 5;
-    border-radius: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     transition: transform 0.4s ease-in-out;
 }
 
@@ -418,7 +412,7 @@ button:hover .live-button-icon{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 90px;
 }
 
 .title-text {
