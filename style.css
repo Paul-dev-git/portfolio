@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 /* =========================================================
   1. Variablen
   ========================================================= */
 
 :root {
-    --color-bg-light: rgb(245, 246, 250);
-    --color-bg-dark: #0f0f12;
+    --color-bg-light: rgb(241, 242, 249);
+    --color-bg-dark: #070712;
 
     --color-surface-light: rgba(255, 255, 255, 0.4);
-    --color-surface-dark: rgba(37, 37, 43, 0.4);
+    --color-surface-dark: rgba(46, 46, 55, 0.4);
 
     --color-second-surface-light: rgb(241, 242, 249);
     --color-second-surface-dark: rgba(57, 61, 71, 0.4);
@@ -15,19 +17,19 @@
     --color-text-light: #292929;
     --color-text-dark: #f2f2f7;
 
-    --color-primary: #007AFF;
+    --color-primary: #1d62e3;
 
     --color-hover-light: rgba(152, 152, 170, 0.17);
     --color-hover-dark: rgba(255,255,255,0.08);
 
-    --color-shadow-light: rgba(0, 122, 255, 0.3);
-    --color-shadow-dark: rgba(0, 122, 255, 0.2);
+    --color-shadow-light: rgba(0, 80, 255, 0.3);
+    --color-shadow-dark: rgba(0, 80, 255, 0.2);
 
     --background-color: var(--color-bg-light);
     --surface-color: var(--color-surface-light);
     --second-surface-color: var(--color-second-surface-light);
     --text-color: var(--color-text-light);
-    --nav-active-bg: rgba(16, 114, 221, 0.1);
+    --nav-active-bg: rgba(186, 214, 250, 0.2);
 
     --grid-color-light: rgb(206, 210, 223);
     --grid-color-dark: rgb(44, 45, 50);
@@ -64,7 +66,7 @@
 
 body{
     margin:0;
-    font-family: monospace;
+    font-family:"JetBrains Mono", monospace;
     background-color:var(--background-color);
     transition: background-color 0.25s ease-in-out;
 }
@@ -198,14 +200,39 @@ body::before{
     width: 500px;
 }
 
+.blog-info{
+    width: 500px;
+    margin-top: 55px;
+    margin-left: -10px;
+}
+
+.blog-icon{
+    height: 22px;
+    width: 22px;
+    margin-right: 8px;
+}
+
 .project-info-text{
-    margin-left: 20px;
+    margin-left: 40px;
     color: var(--text-color);
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.blog-info-text{
+    margin-left: 40px;
+    margin-top: -25px;
+    color: var(--text-color);
+    font-size: 17px;
+    width: 650px;
 }
 
 .buttons-container{
     display: flex;
     flex-direction: row;
+    margin-top: -35px;
+    margin-left: 10px;
 }
 
 @keyframes flyIn {
@@ -216,6 +243,13 @@ body::before{
 .main-text{
     padding-left: 30px;
     color:var(--text-color);
+}
+
+.main-text-smaller{
+    padding-left: 40px;
+    color:var(--text-color);
+    font-size: 30px;
+    width: 700px;
 }
 
 .main-image{
@@ -229,14 +263,45 @@ body::before{
     filter: brightness(0) invert(1);
 }
 
-.arrow{
+.arrow-icon{
     width: 16px;
+    height: 16px;
+
+    background-color: var(--text-color);
+
+    -webkit-mask: url("assets/images/arrow-right-solid-full.svg") no-repeat center;
+    mask: url("assets/images/arrow-right-solid-full.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: background-color 0.3s ease;
 }
 
-/* Icons im Dark Mode weiß */
-[data-theme="dark"] .button-icon,
-[data-theme="dark"] .arrow {
-    filter: brightness(0) invert(1);
+.arrow-icon-blue{
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--color-primary);
+
+    -webkit-mask: url("assets/images/arrow-right-solid-full.svg") no-repeat center;
+    mask: url("assets/images/arrow-right-solid-full.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    margin-top: 5px;
+}
+
+.row{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    font-size: 105%;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-bottom: 15px;
 }
 
 button {
@@ -244,8 +309,8 @@ button {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-size: 17px;
-    font-family: monospace;
+    font-size: 15px;
+    font-family: "JetBrains Mono", monospace;
     color: var(--text-color);
     background-color: var(--second-surface-color);
     border: 1px solid var(--color-border);
@@ -259,25 +324,73 @@ button {
 }
 
 button:hover {
-    background-color: rgba(8, 115, 236, 0.7);
-    border: none;
-    color: white;
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
-    0 0 20px rgba(0, 122, 255, 0.5),
-    0 0 30px rgba(0, 122, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 72, 255, 0.25),
+    0 0 20px rgba(0, 72, 255, 0.25),
+    0 0 30px rgba(0, 89, 255, 0.25);
+    border: 2px solid rgba(0, 81, 255, 0.78);
+    color: var(--color-primary);
+}
+
+.button-icon{
+    width: 24px;
+    height: 24px;
+
+    background-color: var(--text-color);
+
+    -webkit-mask: url("assets/images/github-brands-solid-full.svg") no-repeat center;
+    mask: url("assets/images/github-brands-solid-full.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: background-color 0.3s ease;
+}
+
+.live-button-icon{
+    width: 24px;
+    height: 24px;
+
+    background-color: var(--text-color);
+
+    -webkit-mask: url("assets/images/globe-solid-full.svg") no-repeat center;
+    mask: url("assets/images/globe-solid-full.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: background-color 0.3s ease;
+}
+
+.itch-button-icon{
+    width: 24px;
+    height: 24px;
+
+    background-color: var(--text-color);
+
+    -webkit-mask: url("assets/images/itch-io-brands-solid-full.svg") no-repeat center;
+    mask: url("assets/images/itch-io-brands-solid-full.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: background-color 0.3s ease;
 }
 
 button:hover .button-icon{
-    filter: brightness(0) invert(1);
+    background-color: var(--color-primary);
 }
 
-button:hover .arrow{
-    filter: brightness(0) invert(1);
+button:hover .itch-button-icon{
+    background-color: var(--color-primary);
 }
 
-.button-icon {
-    width: 22px;
+button:hover .arrow-icon{
+    background-color: var(--color-primary);
+}
+
+button:hover .live-button-icon{
+    background-color: var(--color-primary);
 }
 
 .itchio-button {
@@ -285,18 +398,14 @@ button:hover .arrow{
 }
 
 .itchio-button:hover {
-    background-color: rgba(236, 83, 83, 0.7);
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(236, 83, 83, 0.4),
-    0 0 20px rgba(236, 83, 83, 0.4),
-    0 0 30px rgba(236, 83, 83, 0.4);
 }
 
 .project-button1 {
     margin-left: 10px;
 }
 .project-button2 {
-    margin-left: 5px;
+    margin-left: -25px;
 }
 
 a{
@@ -305,20 +414,20 @@ a{
 
 h1 {
     padding-bottom: 20px;
-    font-size: 38px;
+    font-size: 34px;
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: -20px;
 }
 
 p {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .small-text{
-    font-weight: 200;
+    font-weight: 400;
     padding-left: 30px;
     color:var(--text-color);
 }
@@ -373,16 +482,17 @@ p {
 
 .grid-item p {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 300;
     color: var(--text-color);
 }
 
 .grid-item:hover {
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
-    0 0 20px rgba(0, 122, 255, 0.5),
-    0 0 30px rgba(0, 122, 255, 0.5);
-    border: 2px solid rgba(0, 122, 255, 0.78);
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.25),
+    0 0 20px rgba(0, 81, 255, 0.25),
+    0 0 30px rgba(0, 81, 255, 0.25);
+    border: 2px solid var(--color-primary);
 }
 
 .languages-container{
@@ -391,6 +501,17 @@ p {
     flex-wrap: wrap;
     gap: 10px 0;
     margin-left: 20px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.blog-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    gap: 2px 0;
+    margin-bottom: -30px;
 }
 
 .language-item {
@@ -399,13 +520,42 @@ p {
     align-items: center;
     width: fit-content;
     margin-top: -40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: -10px;
+    scale: 80%;
+    background-color: var(--second-surface-color);
+    border-radius: 150px;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    margin-top: -40px;
+    padding-left: 10px;
+    height: 40px;
+    padding-right: 10px;
+    scale: 80%;
+    background-color: rgba(55, 142, 255, 0.2);
+    border-radius: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.rest-info-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    margin-top: -40px;
+    height: 40px;
     padding-left: 5px;
     padding-right: 5px;
     scale: 80%;
-    background-color: var(--second-surface-color);
-    border-radius: 15px;
-    border: 1px solid var(--color-border);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    color: var(--text-color);
 }
 
 .language-item img {
@@ -419,12 +569,8 @@ p {
     color: var(--text-color);
 }
 
-.language-item:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.5),
-    0 0 20px rgba(0, 122, 255, 0.5),
-    0 0 30px rgba(0, 122, 255, 0.5);
-    border: 2px solid rgba(0, 122, 255, 0.78);
+.category-item p{
+    color: var(--color-primary);
 }
 
 
@@ -654,7 +800,7 @@ body {
 
 .comet {
     position: absolute;
-    width: 180px;
+    width: 90px;
     height: 2px;
 
     background: linear-gradient(
@@ -664,31 +810,19 @@ body {
     );
 
     transform: rotate(45deg);
-    animation: cometMove 6s linear infinite;
+    animation: cometMove 8s linear infinite;
 }
 
 .comet:nth-child(1) {
     top: -20%;
     left: -10%;
-    animation-delay: 0s;
+    animation-delay: 3s;
 }
 
 .comet:nth-child(2) {
     top: -10%;
     left: -30%;
-    animation-delay: 1s;
-}
-
-.comet:nth-child(3) {
-    top: -30%;
-    left: -5%;
-    animation-delay: 2s;
-}
-
-.comet:nth-child(4) {
-    top: -40%;
-    left: -20%;
-    animation-delay: 1.5s;
+    animation-delay: 9s;
 }
 
 @keyframes cometMove {
@@ -737,13 +871,6 @@ label {
 
 ::selection {
     background: rgba(0, 123, 255, 0.1);
-}
-
-.projects-carousel {
-    position: relative;
-    margin: 50px auto;
-    width: 100%;
-    max-width: 600px;
 }
 
 .projects-wrapper {
