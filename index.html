@@ -12,6 +12,10 @@
     <div class="cursor"></div>
     <div class="cursor-glow"></div>
 
+    <div class="color-blob"></div>
+    <div class="color-blob2"></div>
+    <div class="color-blob3"></div>
+
     <div class="comets">
         <span class="comet"></span>
         <span class="comet"></span>
@@ -53,105 +57,162 @@
 
     <div class="top-blur-overlay"></div>
 
-    <div class="main-container">
-        <h4 class="small-text">ÜBER MICH</h4>
-        <h1 class="main-text">Hi, Ich bin <strong class="blue">Paul Maßmann</strong> 👋</h1>
-        <p class="main-text">15-jähriger <strong>Web</strong>, <strong>App</strong> und <strong>Game Entwickler</strong> in meiner Freizeit.</p>
-        <p class="main-text">Gleichzeitig arbeite ich an kleinen Arduino Projekten.</p>
-        <p class="main-text">Den Großteil meiner Projekte findest Du auf <a href="https://github.com/Paul-dev-git" class="link">GitHub</a>
-        </p>
-        <p class="main-text">oder beim <a href="https://projecthub.arduino.cc/arduinonano" class="link">Arduino Project Hub</a>.</p>
-        <p class="main-text">Videospiele veröffentliche ich auf <a href="https://pauligamedev.itch.io/" class="link">itch.io</a>
-        </p>
-        <p class="main-text">mit mehr als 3.500 Views und 250 Downloads.</p>
+    <div class="hero">
+    <div class="main-container" id="start-container">
+        <div id="verfügbar_indicator">
+            <div id="green_dot"></div>
+            <p>VERFÜGBAR FÜR NEUE PROJEKTE</p>
+        </div>
+        <h1 class="main-text">Hi, Ich bin <br><strong class="blue">Paul Maßmann</strong> 👋</h1>
+        <p class="main-text">15-jähriger <strong>Web-</strong>, <strong>App-</strong> und <strong>Game Entwickler</strong> aus Deutschland. Ich baue in meiner Freizeit, was mir gefällt — und teile es gerne.</p>
         <div class="buttons">
-        <a href="https://github.com/Paul-dev-git">
-            <button>
-                <div class="button-icon"></div>
-                Mein GitHub
-                <div class="arrow-icon"></div>
+        <a href="projekte.html">
+            <button id="projekte-button">
+                Meine Projekte
+                <div class="arrow-icon-inverted"></div>
             </button>
         </a>
-            <a href="https://pauligamedev.itch.io/">
-                <button class="itchio-button">
-                    <div class="itch-button-icon"></div>
-                    Mein itch.io
-                    <div class="arrow-icon"></div>
+            <a href="kontakt.html">
+                <button class="mail-button">
+                    <div class="mail-button-icon"></div>
+                    Sag Hallo
                 </button>
             </a>
         </div>
     </div>
+        <div class="mac-window">
+            <img src="assets/images/mac_window.png" alt="MAC Icon" id="mac-image">
+        </div>
+    </div>
+    <div class="stats-grid">
+        <div class="stats-item">
+            <img src="assets/images/eye-blue.svg" alt="Download Icon" class="stats-image">
+            <p class="stat">3.500+</p>
+            <p class="small">Views auf itch.io</p>
+        </div>
+        <div class="stats-item">
+            <img src="assets/images/downloads-blue.svg" alt="Download Icon" class="stats-image">
+            <p class="stat">250+</p>
+            <p class="small">Downloads</p>
+        </div>
+        <div class="stats-item">
+            <img src="assets/images/code-blue.svg" alt="Download Icon" class="stats-image">
+            <p class="stat">16</p>
+            <p class="small">Technologien</p>
+        </div>
+        <div class="stats-item">
+            <img src="assets/images/face-blue.svg" alt="Download Icon" class="stats-image">
+            <p class="stat">15</p>
+            <p class="small">Jahre jung</p>
+        </div>
+    </div>
 
-    <div class="skills-container">
+    <div class="leidenschaften-container">
+        <div class="linksbündig">
+        <h4 class="small-text">WAS ICH MACHE</h4>
+        <h1 class="main-text">Vier Welten, eine Leidenschaft</h1>
+        </div>
+        <div class="leidenschaften-grid">
+            <div id="leidenschaften-item1">
+                <img src="assets/images/code-aqua.svg" alt="Download Icon" id="leidenschaften-image1">
+                <p class="leidenschaft-title">Web</p>
+                <p class="small">Responsive Webseiten und Web-Apps mit HTML, CSS, JavaScript und APIs.</p>
+            </div>
+            <div id="leidenschaften-item2">
+                <img src="assets/images/games-purple.svg" alt="Download Icon" id="leidenschaften-image2">
+                <p class="leidenschaft-title">Games</p>
+                <p class="small">2D-Spiele und Pixel-Adventures mit Unity, C# und Playdate.</p>
+            </div>
+            <div id="leidenschaften-item3">
+                <img src="assets/images/phone-green.svg" alt="Download Icon" id="leidenschaften-image3">
+                <p class="leidenschaft-title">Apps</p>
+                <p class="small">Mobile Apps mit Flutter und Dart.</p>
+            </div>
+            <div id="leidenschaften-item4">
+                <img src="assets/images/arduino-orange.svg" alt="Download Icon" id="leidenschaften-image4">
+                <p class="leidenschaft-title">Arduino</p>
+                <p class="small">Kleine Hardware-Projekte und Tüfteleien rund ums Arduino Nano.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills">
+    <div class="leidenschaften-container">
+        <div class="linksbündig">
+    <h4 class="small-text">WAS ICH BENUTZE</h4>
         <h1 class="main-text">Technologien</h1>
-        <p class="main-text">In der Vergangenheit habe ich mit einer Vielzahl von <strong>Tools, Software, Programmiersprachen</strong> und sonstigen Werkzeugen gearbeitet.</p>
-        <p class="main-text">Hier sind einige der Technologien, mit denen ich <strong>Erfahrung</strong> habe:</p>
+        <p class="main-text" id="higher">Eine Mischung aus <strong>Tools, Software</strong> und <strong>Programmiersprachen</strong>, mit denen ich Erfahrung gesammelt habe.</p>
+        </div>
+    </div>
+    </div>
+    <div class="title">
+        <div class="marquee-container">
+            <div class="marquee-row to-right">
+                <div class="marquee-track">
+                    <div class="card"><img src="assets/images/html-logo.png" alt="HTML Logo" class="card-icon"><span class="card-name">HTML</span></div>
+                    <div class="card"><img src="assets/images/css-logo.png" alt="CSS Logo" class="card-icon"><span class="card-name">CSS</span></div>
+                    <div class="card"><img src="assets/images/javascript-logo.png" alt="JS Logo" class="card-icon"><span class="card-name">JavaScript</span></div>
+                    <div class="card"><img src="assets/images/unity-logo.png" alt="Unity Logo" class="card-icon"><span class="card-name">Unity</span></div>
+                    <div class="card"><img src="assets/images/flutter-logo.png" alt="Flutter Logo" class="card-icon"><span class="card-name">Flutter</span></div>
+                    <div class="card"><img src="assets/images/dart-logo.png" alt="Dart Logo" class="card-icon"><span class="card-name">Dart</span></div>
+                    <div class="card"><img src="assets/images/sql-logo.png" alt="SQL Logo" class="card-icon"><span class="card-name">SQl</span></div>
+                    <div class="card"><img src="assets/images/swift-logo.png" alt="Swift Logo" class="card-icon"><span class="card-name">Swift</span></div>
+                    <div class="card"><img src="assets/images/python-logo.png" alt="Python Logo" class="card-icon"><span class="card-name">Python</span></div>
+                    <div class="card"><img src="assets/images/csharp-logo.png" alt="C# Logo" class="card-icon"><span class="card-name">C#</span></div>
 
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="assets/images/html-logo.png" alt="HTML Logo">
-                <p><strong>HTML</strong></p>
+                    <div class="card"><img src="assets/images/html-logo.png" alt="HTML Logo" class="card-icon"><span class="card-name">HTML</span></div>
+                    <div class="card"><img src="assets/images/css-logo.png" alt="CSS Logo" class="card-icon"><span class="card-name">CSS</span></div>
+                    <div class="card"><img src="assets/images/javascript-logo.png" alt="JS Logo" class="card-icon"><span class="card-name">JavaScript</span></div>
+                    <div class="card"><img src="assets/images/unity-logo.png" alt="Unity Logo" class="card-icon"><span class="card-name">Unity</span></div>
+                    <div class="card"><img src="assets/images/flutter-logo.png" alt="Flutter Logo" class="card-icon"><span class="card-name">Flutter</span></div>
+                    <div class="card"><img src="assets/images/dart-logo.png" alt="Dart Logo" class="card-icon"><span class="card-name">Dart</span></div>
+                    <div class="card"><img src="assets/images/sql-logo.png" alt="SQL Logo" class="card-icon"><span class="card-name">SQl</span></div>
+                    <div class="card"><img src="assets/images/swift-logo.png" alt="Swift Logo" class="card-icon"><span class="card-name">Swift</span></div>
+                    <div class="card"><img src="assets/images/python-logo.png" alt="Python Logo" class="card-icon"><span class="card-name">Python</span></div>
+                    <div class="card"><img src="assets/images/csharp-logo.png" alt="C# Logo" class="card-icon"><span class="card-name">C#</span></div>
+                </div>
             </div>
-            <div class="grid-item">
-                <img src="assets/images/css-logo.png" alt="CSS Logo">
-                <p><strong>CSS</strong></p>
+
+            <div class="marquee-row to-left">
+                <div class="marquee-track">
+                    <div class="card"><img src="assets/images/c++-logo.png" alt="C++ Logo" class="card-icon"><span class="card-name">C++</span></div>
+                    <div class="card"><img src="assets/images/csharp-logo.png" alt="C# Logo" class="card-icon"><span class="card-name">C#</span></div>
+                    <div class="card"><img src="assets/images/python-logo.png" alt="Python Logo" class="card-icon"><span class="card-name">Python</span></div>
+                    <div class="card"><img src="assets/images/swift-logo.png" alt="Swift Logo" class="card-icon"><span class="card-name">Swift</span></div>
+                    <div class="card"><img src="assets/images/sql-logo.png" alt="SQL Logo" class="card-icon"><span class="card-name">SQl</span></div>
+                    <div class="card"><img src="assets/images/dart-logo.png" alt="Dart Logo" class="card-icon"><span class="card-name">Dart</span></div>
+                    <div class="card"><img src="assets/images/flutter-logo.png" alt="Flutter Logo" class="card-icon"><span class="card-name">Flutter</span></div>
+                    <div class="card"><img src="assets/images/unity-logo.png" alt="Unity Logo" class="card-icon"><span class="card-name">Unity</span></div>
+                    <div class="card"><img src="assets/images/javascript-logo.png" alt="JS Logo" class="card-icon"><span class="card-name">JavaScript</span></div>
+                    <div class="card"><img src="assets/images/css-logo.png" alt="CSS Logo" class="card-icon"><span class="card-name">CSS</span></div>
+
+                    <div class="card"><img src="assets/images/c++-logo.png" alt="C++ Logo" class="card-icon"><span class="card-name">C++</span></div>
+                    <div class="card"><img src="assets/images/csharp-logo.png" alt="C# Logo" class="card-icon"><span class="card-name">C#</span></div>
+                    <div class="card"><img src="assets/images/python-logo.png" alt="Python Logo" class="card-icon"><span class="card-name">Python</span></div>
+                    <div class="card"><img src="assets/images/swift-logo.png" alt="Swift Logo" class="card-icon"><span class="card-name">Swift</span></div>
+                    <div class="card"><img src="assets/images/sql-logo.png" alt="SQL Logo" class="card-icon"><span class="card-name">SQl</span></div>
+                    <div class="card"><img src="assets/images/dart-logo.png" alt="Dart Logo" class="card-icon"><span class="card-name">Dart</span></div>
+                    <div class="card"><img src="assets/images/flutter-logo.png" alt="Flutter Logo" class="card-icon"><span class="card-name">Flutter</span></div>
+                    <div class="card"><img src="assets/images/unity-logo.png" alt="Unity Logo" class="card-icon"><span class="card-name">Unity</span></div>
+                    <div class="card"><img src="assets/images/javascript-logo.png" alt="JS Logo" class="card-icon"><span class="card-name">JavaScript</span></div>
+                    <div class="card"><img src="assets/images/css-logo.png" alt="CSS Logo" class="card-icon"><span class="card-name">CSS</span></div>
+                </div>
             </div>
-            <div class="grid-item">
-                <img src="assets/images/javascript-logo.png" alt="JavaScript Logo">
-                <p><strong>JavaScript</strong></p>
+        </div>
+    </div>
+
+    <div class="kontakt-container">
+        <div class="row-layout">
+            <div class="column-layout">
+                <h4 class="small-text">LASS UNS REDEN</h4>
+                <h1 class="main-text">Eine Idee, ein Projekt oder einfach Lust Hallo zu sagen?</h1>
+                <p class="main-text">Schreib mir und ich antworte so schnell ich kann.</p>
             </div>
-            <div class="grid-item">
-                <img src="assets/images/sql-logo.png" alt="SQL Logo">
-                <p><strong>SQL</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/csharp-logo.png" alt="C# Logo">
-                <p><strong>C#</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/c++-logo.png" alt="C++ Logo">
-                <p><strong>C++</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/unity-logo.png" alt="Unity Logo">
-                <p><strong>Unity</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/playdate-logo.png" alt="Playdate Logo">
-                <p><strong>Playdate</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/flutter-logo.png" alt="Flutter Logo">
-                <p><strong>Flutter</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/dart-logo.png" alt="Dart Logo">
-                <p><strong>Dart</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/swift-logo.png" alt="Swift Logo">
-                <p><strong>Swift</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/blender-logo.png" alt="Blender Logo">
-                <p><strong>Blender</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/github-logo.svg" alt="GitHub Logo">
-                <p><strong>GitHub</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/git-logo.png" alt="Git Logo">
-                <p><strong>Git</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/framer-logo.avif" alt="Framer Logo">
-                <p><strong>Framer</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/figma-logo.svg" alt="Figma Logo">
-                <p><strong>Figma</strong></p>
-            </div>
+            <button id="kontakt-button">
+                <div class="mail-button-icon-inverted"></div>
+                Kontakt aufnehmen
+                <div class="arrow-icon-white"></div>
+            </button>
         </div>
     </div>
     
