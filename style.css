@@ -732,8 +732,9 @@ body::before{
     align-items: center;
     background: linear-gradient(to bottom right, #bdcdfa, #e0d5fa, #f4c6fb);
     margin-top: 120px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 20%;
+    margin-right: 20%;
+    white-space: normal;
     padding: 20px;
     border-radius: 25px;
     border: 2px solid var(--color-border);
@@ -743,6 +744,7 @@ body::before{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 80%;
 }
 
 .column-layout{
