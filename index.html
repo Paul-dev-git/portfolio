@@ -228,6 +228,21 @@
         <p>Made with ❤️ by Paul Maßmann • paul.massmann@web.de</p>
         <p>© 2026 Paul Maßmann • Alle Rechte vorbehalten</p>
     </div>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script>
+            const lenis = new Lenis({
+                duration: 1.8,
+                smoothWheel: true 
+            });
+            
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
