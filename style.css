@@ -254,7 +254,6 @@ body::before{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 645px;
 }
 
 #leidenschaften-item1{
