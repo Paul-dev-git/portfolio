@@ -191,6 +191,10 @@ body::before{
     margin-top: -20px;
 }
 
+#up{
+    margin-top: -30px;
+}
+
 #mac-image{
     width: 70%;
     margin-top: 10%;
@@ -531,7 +535,7 @@ body::before{
 .color-blob5 {
     position: absolute;
     top: 45px;
-    left: 550px;
+    left: 350px;
     width: 300px;
     height: 300px;
     z-index: -3;
@@ -585,7 +589,7 @@ body::before{
 .color-blob8 {
     position: absolute;
     top: 45px;
-    left: 550px;
+    left: 280px;
     width: 300px;
     height: 300px;
     z-index: -3;
@@ -616,6 +620,15 @@ body::before{
             rgba(174, 51, 237, 0.02) 50%,
             rgba(174, 51, 237, 0) 70%
     );
+}
+
+.space{
+    height: 35px;
+}
+
+#kurse-text{
+    margin-top: 4px;
+    margin-bottom: 50px;
 }
 
 #right-side{
@@ -775,7 +788,12 @@ body::before{
     border: 1px solid var(--color-border);
     border-radius: 50px;
     height: 50px;
-    margin-top: 10%;
+    align-self: center;
+}
+
+#low{
+    margin-top: 30px;
+    font-size: 35px;
 }
 
 .project-container{
@@ -821,12 +839,12 @@ body::before{
     background-color: rgb(80 178 244 / 0.2);
     width: 100px;
     border-radius: 15px;
-    padding-left: 10px;
     margin-top: 30px;
     margin-left: 25px;
     font-size: 15px;
     font-weight: bold;
     color: rgb(29 133 170);
+    padding: 3px 3px 3px 15px;
 }
 
 .blogs-row{
@@ -870,18 +888,16 @@ body::before{
 }
 
 .project-info-text{
-    margin-left: 40px;
     color: var(--text-color);
     font-size: 16px;
-    margin-right: 10px;
-    margin-bottom: 25px;
+    margin: -25px 10px 25px 40px;
 }
 
 .project-info-text-colored{
     color: rgb(44 135 168);
     font-size: 16px;
     font-weight: bold;
-    margin: -40px 10px 25px 30px;
+    margin: -40px 20px 25px 30px;
 }
 
 .blog-info-text{
