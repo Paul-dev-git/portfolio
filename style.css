@@ -746,7 +746,7 @@ body::before{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom right, #bdcdfa, #e0d5fa, #f4c6fb);
+    background: linear-gradient(to bottom right, #d1cefa, #d2e5ff);
     margin-top: 120px;
     margin-left: 20%;
     margin-right: 20%;
@@ -1318,7 +1318,10 @@ button:hover .live-button-icon{
     padding: 20px;
     border-radius: 25px;
     border: 2px solid var(--color-border);
-    transition: transform, box-shadow, border 0.3s ease-in-out;
+    transition: 
+            transform 0.5s ease-in-out,
+        box-shadow 0.5s ease-in-out,
+        border 0.5s ease-in-out;
 }
 
 .feature-box:hover {
