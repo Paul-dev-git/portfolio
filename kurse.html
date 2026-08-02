@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lernen</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<link rel="stylesheet" href="style.css">
 
 <div class="cursor"></div>
 <div class="cursor-glow"></div>
@@ -30,8 +30,6 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-indicator"></div>
-
             <a href="index.html" class="nav-item">
                 <img src="assets/images/house-solid-full.svg" alt="Start Icon" class="nav-icon">
                 <span>Start</span>
@@ -166,19 +164,6 @@
 
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
-<script>
-    const lenis = new Lenis({
-        duration: 1.8,
-        smoothWheel: true
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-</script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -33,8 +33,6 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-indicator"></div>
-
             <a href="index.html" class="nav-item">
                 <img src="assets/images/house-solid-full.svg" alt="Start Icon" class="nav-icon">
                 <span>Start</span>
@@ -56,6 +54,7 @@
 <div class="hero" id="hero2">
     <div class="main-container">
         <div id="verfügbar_indicator">
+            <span class="availability-glow" aria-hidden="true"></span>
             <div id="green_dot"></div>
             <p>PORTFOLIO / MEINE_PROJEKTE</p>
         </div>
@@ -150,19 +149,6 @@
 </div>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
-<script>
-    const lenis = new Lenis({
-        duration: 1.8,
-        smoothWheel: true
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-</script>
 <script src="script.js"></script>
 </body>
 </html>

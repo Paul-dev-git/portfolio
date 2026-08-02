@@ -1,102 +1,84 @@
+if (window.Lenis) {
+    const lenis = new Lenis({ duration: 1.8, smoothWheel: true });
+    const updateLenis = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(updateLenis);
+    };
+    requestAnimationFrame(updateLenis);
+}
+
 const toggle = document.querySelector('.darkmode-toggle');
-const selector = toggle.querySelector('.selector');
-const icons = toggle.querySelectorAll('.mode-icon');
 
-let savedTheme = localStorage.getItem("theme");
+if (toggle) {
+    const selector = toggle.querySelector('.selector');
+    const icons = [...toggle.querySelectorAll('.mode-icon')];
+    let isDarkMode = localStorage.getItem('theme') === 'dark';
 
-let isDarkMode = savedTheme === "dark";
+    const updateTheme = () => {
+        const activeIndex = isDarkMode ? 1 : 0;
+        const activeIcon = icons[activeIndex];
 
+        document.documentElement.dataset.theme = isDarkMode ? 'dark' : 'light';
+        localStorage.setItem('theme', document.documentElement.dataset.theme);
+        icons.forEach((icon, index) => icon.classList.toggle('active', index === activeIndex));
 
-function updateToggle() {
+        const toggleRect = toggle.getBoundingClientRect();
+        const iconRect = activeIcon.getBoundingClientRect();
+        selector.style.left = `${iconRect.left - toggleRect.left + (iconRect.width - selector.offsetWidth) / 2}px`;
+    };
 
-    const activeIcon = isDarkMode ? icons[1] : icons[0];
-
-    const containerRect = toggle.getBoundingClientRect();
-    const iconRect = activeIcon.getBoundingClientRect();
-    const leftPos = iconRect.left - containerRect.left;
-
-    selector.style.left = `${leftPos + (iconRect.width - selector.offsetWidth)/2}px`;
-
-    icons.forEach((icon, idx) => {
-
-        if ((isDarkMode && idx === 1) || (!isDarkMode && idx === 0)) {
-            icon.classList.add('active');
-        } else {
-            icon.classList.remove('active');
-        }
-
+    toggle.addEventListener('click', () => {
+        isDarkMode = !isDarkMode;
+        updateTheme();
     });
-
-    const theme = isDarkMode ? "dark" : "light";
-
-    document.documentElement.setAttribute("data-theme", theme);
-
-    localStorage.setItem("theme", theme);
+    window.addEventListener('resize', updateTheme);
+    updateTheme();
 }
 
-toggle.addEventListener("click", () => {
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const cursor = document.querySelector('.cursor');
+    const glow = document.querySelector('.cursor-glow');
 
-    isDarkMode = !isDarkMode;
+    if (cursor && glow) {
+        let mouseX = innerWidth / 2;
+        let mouseY = innerHeight / 2;
+        let glowX = mouseX;
+        let glowY = mouseY;
 
-    updateToggle();
+        document.addEventListener('mousemove', ({ clientX, clientY }) => {
+            mouseX = clientX;
+            mouseY = clientY;
+            cursor.style.left = `${mouseX}px`;
+            cursor.style.top = `${mouseY}px`;
+        });
 
-});
+        document.querySelectorAll('a, button').forEach((element) => {
+            element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
 
-updateToggle();
-
-
-
-const glow = document.querySelector(".cursor-glow");
-
-let mouseX = 0;
-let mouseY = 0;
-
-let posX = window.innerWidth / 2;
-let posY = window.innerHeight / 2;
-
-document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-function animate() {
-    posX += (mouseX - posX) * 0.1;
-    posY += (mouseY - posY) * 0.1;
-
-    glow.style.left = posX + "px";
-    glow.style.top = posY + "px";
-
-    requestAnimationFrame(animate);
+        const animateGlow = () => {
+            glowX += (mouseX - glowX) * 0.1;
+            glowY += (mouseY - glowY) * 0.1;
+            glow.style.left = `${glowX}px`;
+            glow.style.top = `${glowY}px`;
+            requestAnimationFrame(animateGlow);
+        };
+        animateGlow();
+    }
 }
 
-animate();
+const previousButton = document.querySelector('.carousel-btn.prev');
+const nextButton = document.querySelector('.carousel-btn.next');
+const projectCards = [...document.querySelectorAll('.project-card')];
 
+if (previousButton && nextButton && projectCards.length) {
+    let currentCard = 0;
+    const showCard = (direction) => {
+        currentCard = Math.max(0, Math.min(currentCard + direction, projectCards.length - 1));
+        projectCards[currentCard].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    };
 
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-
-const hoverElements = document.querySelectorAll("a, button");
-
-hoverElements.forEach(el => {
-    el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
-    el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
-});
-const prevBtn = document.querySelector(".carousel-btn.prev");
-const nextBtn = document.querySelector(".carousel-btn.next");
-const cards = document.querySelectorAll(".project-card");
-
-let index = 0;
-
-nextBtn.addEventListener("click", () => {
-    index = Math.min(index + 1, cards.length - 1);
-    cards[index].scrollIntoView({ behavior: "smooth", inline: "center" });
-});
-
-prevBtn.addEventListener("click", () => {
-    index = Math.max(index - 1, 0);
-    cards[index].scrollIntoView({ behavior: "smooth", inline: "center" });
-});
+    nextButton.addEventListener('click', () => showCard(1));
+    previousButton.addEventListener('click', () => showCard(-1));
+}
