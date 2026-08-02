@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ein spielerischer Probekurs für Programmier-Einsteiger.">
+    <title>Probekurs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="trial-page">
+    <div class="cursor"></div>
+    <div class="cursor-glow"></div>
+    <div class="trial-orb trial-orb-one"></div>
+    <div class="trial-orb trial-orb-two"></div>
+
+    <main class="trial-shell">
+        <header class="trial-header">
+            <a class="trial-close" href="kurse.html" aria-label="Zurück zu den Kursen">×</a>
+            <div class="trial-progress" aria-label="Lektionsfortschritt"><span class="trial-progress-bar"></span></div>
+            <span class="trial-streak" aria-label="Punkte"><span aria-hidden="true">⚡</span> <strong class="trial-score">0</strong></span>
+            <label class="darkmode-toggle trial-theme-toggle" aria-label="Farbschema wechseln">
+                <span class="selector"></span>
+                <img src="assets/images/sun-solid-full.svg" alt="" class="mode-icon light">
+                <img src="assets/images/moon-solid-full.svg" alt="" class="mode-icon dark">
+            </label>
+        </header>
+
+        <div class="trial-layout">
+            <aside class="trial-sidebar">
+                <div class="trial-badge"><span class="trial-course-icon">&lt;/&gt;</span><span class="trial-course-name">Probekurs</span></div>
+                <p class="trial-sidebar-label">DEIN LERNPFAD</p>
+                <div class="trial-steps" aria-label="Aufgabenfortschritt"></div>
+                <div class="trial-tip"><span aria-hidden="true">⌘</span><p><strong>Code bauen</strong>Ziehe die Bausteine in die richtige Reihenfolge – oder tippe sie an und wähle einen Platz aus.</p></div>
+            </aside>
+
+            <section class="trial-lesson" aria-live="polite">
+                <p class="trial-step">CHALLENGE <span class="trial-step-number">1</span> VON 5</p>
+                <h1 class="trial-question">Lade die Lektion …</h1>
+                <p class="trial-hint"></p>
+                <div class="trial-explainer">
+                    <div class="trial-concept-visual" aria-hidden="true"></div>
+                    <div><p class="trial-explainer-label">KURZ ERKLÄRT</p><p class="trial-explainer-text"></p></div>
+                    <button class="trial-start" type="button">Jetzt ausprobieren <span class="arrow-icon-inverted" aria-hidden="true"></span></button>
+                </div>
+                <div class="code-builder">
+                    <div class="code-window">
+                        <div class="code-window-bar"><span></span><span></span><span></span><p class="trial-file-name">main.html</p></div>
+                        <div class="code-slots" aria-label="Code-Arbeitsbereich"></div>
+                    </div>
+                    <div class="code-bank-wrap">
+                        <p>CODE-BAUSTEINE</p>
+                        <div class="code-bank" aria-label="Verfügbare Code-Bausteine"></div>
+                    </div>
+                </div>
+                <div class="trial-result" hidden><p>DEIN AKTUELLER CODE</p><pre><code></code></pre></div>
+                <p class="trial-feedback" role="status"></p>
+                <div class="trial-actions"><button class="trial-reset" type="button">Zurücksetzen</button><button class="trial-next" type="button">Code prüfen</button></div>
+            </section>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="probekurs.js"></script>
+</body>
+</html>
