@@ -448,8 +448,8 @@ body::before{
 
     background: radial-gradient(
             circle,
-            rgba(46, 204, 113, 0.3) 0%,
-            rgba(46, 204, 113, 0.04) 50%,
+            rgba(46, 204, 113, 0.1) 0%,
+            rgba(46, 204, 113, 0.02) 50%,
             rgba(46, 204, 113, 0) 70%
     );
 }
@@ -502,8 +502,8 @@ body::before{
 
     background: radial-gradient(
             circle,
-            rgba(46, 204, 113, 0.3) 0%,
-            rgba(46, 204, 113, 0.04) 50%,
+            rgba(46, 204, 113, 0.1) 0%,
+            rgba(46, 204, 113, 0.02) 50%,
             rgba(46, 204, 113, 0) 70%
     );
 }
@@ -556,8 +556,8 @@ body::before{
 
     background: radial-gradient(
             circle,
-            rgba(46, 204, 113, 0.3) 0%,
-            rgba(46, 204, 113, 0.04) 50%,
+            rgba(46, 204, 113, 0.1) 0%,
+            rgba(46, 204, 113, 0.02) 50%,
             rgba(46, 204, 113, 0) 70%
     );
 }
@@ -740,12 +740,17 @@ body::before{
     margin-left: -80px;
 }
 
-#kontakt-button{
+#kontakt-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background-color: black;
     color: white;
     border: 1px solid var(--color-border);
     border-radius: 50px;
     height: 50px;
+    padding: 10px 22px;
     align-self: center;
 }
 
@@ -798,14 +803,16 @@ body::before{
 
 #projectnum{
     background-color: rgb(80 178 244 / 0.2);
-    width: 100px;
+    width: fit-content;
+    min-width: 125px;
+    white-space: nowrap;
     border-radius: 15px;
     margin-top: 30px;
     margin-left: 25px;
     font-size: 15px;
     font-weight: bold;
     color: rgb(29 133 170);
-    padding: 3px 3px 3px 15px;
+    padding: 3px 15px;
 }
 
 .blogs-row{
@@ -1299,6 +1306,18 @@ button:hover .live-button-icon{
     color: white;
 }
 
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 30px 0 20px 30px;
+    border-radius: 150px;
+    font-size: 15px;
+    font-family: "JetBrains Mono", monospace;
+}
+
 .courses-button:hover {
     background-color: var(--color-primary);
     color: white;
@@ -1509,7 +1528,7 @@ p {
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
-    background: rgb(46 204 113 / 0.65);
+    background: rgb(255 0 0 / 0.65);
     backdrop-filter: blur(3px);
     border-radius: 100px;
 }
@@ -2480,4 +2499,283 @@ img {
         rgba(46, 204, 113, 0.24) 30%,
         rgba(46, 204, 113, 0) 72%
     );
+}
+
+/* Contact page */
+.contact-page {
+    width: min(960px, calc(100% - 40px));
+    margin: 140px auto 0;
+}
+
+.contact-intro {
+    width: min(620px, 100%);
+    margin-bottom: 36px;
+}
+
+.contact-intro h1,
+.contact-intro p,
+.contact-form-heading h2,
+.contact-form-heading p,
+.contact-alternative {
+    color: var(--text-color);
+}
+
+.contact-intro h1 {
+    margin-bottom: 0;
+    font-size: clamp(32px, 5vw, 46px);
+}
+
+.contact-intro > p {
+    line-height: 1.7;
+}
+
+.contact-form-card {
+    padding: clamp(22px, 4vw, 42px);
+    border: 1px solid var(--color-border);
+    border-radius: 25px;
+    background: radial-gradient(circle at top right, rgb(93 207 248 / 0.35), transparent 38%), var(--surface-color);
+    backdrop-filter: blur(3px);
+}
+
+.contact-form-heading h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 27px;
+}
+
+.contact-form-heading p {
+    margin: 10px 0 28px;
+    font-size: 14px;
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-field label {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    outline: none;
+    padding: 13px 14px;
+    resize: vertical;
+    color: var(--text-color);
+    background: var(--second-surface-color);
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-transparent);
+}
+
+.contact-submit {
+    margin: 6px 0 0;
+    color: var(--background-color);
+    background: var(--text-color);
+}
+
+.contact-body .color-blob6 {
+    display: none;
+}
+
+.contact-submit:hover {
+    color: var(--background-color);
+}
+
+.contact-alternative {
+    margin: 26px 0 0;
+    font-size: 14px;
+}
+
+.contact-alternative a {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        width: calc(100% - 32px);
+        margin-top: 135px;
+    }
+
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-link {
+        margin-left: 0;
+    }
+}
+
+/* Availability indicators and contact-page refinements */
+#verf\00fc gbar_indicator {
+    overflow: visible;
+}
+
+#verf\00fc gbar_indicator .availability-glow {
+    z-index: 0;
+    opacity: 0.95;
+}
+
+#verf\00fc gbar_indicator > :not(.availability-glow) {
+    z-index: 1;
+}
+
+.contact-intro #verf\00fc gbar_indicator {
+    width: max-content;
+    max-width: 100%;
+}
+
+.contact-intro #verf\00fc gbar_indicator p {
+    margin-right: 18px;
+    white-space: nowrap;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.3fr);
+    gap: 22px;
+    align-items: stretch;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: clamp(24px, 4vw, 40px);
+    border: 1px solid var(--color-border);
+    border-radius: 25px;
+    background:
+        radial-gradient(circle at 85% 10%, rgb(169 130 250 / 0.42), transparent 32%),
+        radial-gradient(circle at 5% 88%, rgb(46 204 113 / 0.26), transparent 34%),
+        var(--surface-color);
+    backdrop-filter: blur(5px);
+}
+
+.contact-eyebrow {
+    margin: 0 0 14px;
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.contact-details h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-size: clamp(28px, 3vw, 36px);
+}
+
+.contact-details > p:not(.contact-eyebrow) {
+    margin: 18px 0 32px;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.contact-detail-list {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    color: var(--text-color);
+    background: rgb(255 255 255 / 0.09);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.contact-detail small {
+    display: block;
+    color: var(--color-primary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.contact-detail-icon {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-primary);
+}
+
+.contact-clock {
+    -webkit-mask: url("assets/images/clock-regular-full.svg") no-repeat center;
+    mask: url("assets/images/clock-regular-full.svg") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.contact-form-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgb(14 39 93 / 0.12);
+}
+
+.contact-form-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.45;
+    background: linear-gradient(135deg, rgb(255 255 255 / 0.22), transparent 35%);
+}
+
+.contact-form-card > * {
+    position: relative;
+}
+
+.contact-submit {
+    padding: 12px 20px;
+    box-shadow: 0 8px 22px rgb(29 98 227 / 0.22);
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        min-height: auto;
+    }
+
+    .contact-intro #verf\00fc gbar_indicator p {
+        margin-right: 12px;
+        font-size: clamp(10px, 3.1vw, 12px);
+    }
 }

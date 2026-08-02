@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktiere Paul Maßmann für Projektanfragen, Fragen oder eine Zusammenarbeit.">
     <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="contact-body">
+    <div class="cursor"></div>
+    <div class="cursor-glow"></div>
 
+    <div class="color-blob4"></div>
+    <div class="color-blob5"></div>
+    <div class="color-blob6"></div>
+
+    <div class="comets" aria-hidden="true">
+        <span class="comet"></span><span class="comet"></span><span class="comet"></span><span class="comet"></span>
+    </div>
+
+    <header class="top-bar">
+        <label class="darkmode-toggle" aria-label="Farbschema wechseln">
+            <span class="selector"></span>
+            <img src="assets/images/sun-solid-full.svg" alt="" class="mode-icon light">
+            <img src="assets/images/moon-solid-full.svg" alt="" class="mode-icon dark">
+        </label>
+
+        <nav class="navbar" aria-label="Hauptnavigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-item"><img src="assets/images/house-solid-full.svg" alt="" class="nav-icon"><span>Start</span></a>
+                <a href="projekte.html" class="nav-item"><img src="assets/images/folder-solid-full.svg" alt="" class="nav-icon"><span>Projekte</span></a>
+                <a href="kurse.html" class="nav-item"><img src="assets/images/graduation-cap-solid-full.svg" alt="" class="nav-icon"><span>Kurse</span></a>
+            </div>
+        </nav>
+    </header>
+    <div class="top-blur-overlay"></div>
+
+    <main class="contact-page">
+        <section class="contact-intro">
+            <div id="verfügbar_indicator">
+                <span class="availability-glow" aria-hidden="true"></span>
+                <div id="green_dot"></div>
+                <p>SCHICK MIR EINE NACHRICHT</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <aside class="contact-details" aria-label="Kontaktinformationen">
+                <p class="contact-eyebrow">KONTAKT</p>
+                <h2>Lass uns etwas <span class="blue">bauen.</span></h2>
+                <p>Du hast eine Projektidee, willst zusammenarbeiten oder eine Frage? Ich schreibe dir schnellstmöglichst zurück.</p>
+                <div class="contact-detail-list">
+                    <a class="contact-detail" href="mailto:paul.massmann@web.de">
+                        <span class="contact-detail-icon mail-button-icon" aria-hidden="true"></span>
+                        <span><small>E-MAIL</small>paul.massmann@web.de</span>
+                    </a>
+                    <div class="contact-detail">
+                        <span class="contact-detail-icon contact-clock" aria-hidden="true"></span>
+                        <span><small>ANTWORTZEIT</small>1 - 3 Tage</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="contact-form-card" aria-labelledby="contact-form-title">
+                <div class="contact-form-heading">
+                    <h2 id="contact-form-title">Deine Nachricht</h2>
+                    <p><span aria-hidden="true">*</span> Pflichtfeld</p>
+                </div>
+                <form action="https://formsubmit.co/paul.massmann@web.de" method="POST">
+                    <input type="hidden" name="_subject" value="Neue Nachricht von deiner Portfolio Webseite">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off">
+
+                    <div class="contact-form-grid">
+                        <div class="form-field">
+                            <label for="name">Name *</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">E-Mail-Adresse *</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="subject">Betreff *</label>
+                        <input id="subject" name="betreff" type="text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="nachricht" rows="7" required></textarea>
+                    </div>
+                    <button class="contact-submit" type="submit">
+                        Nachricht senden
+                        <span class="arrow-icon-inverted" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <p class="link"><a href="index.html" class="link">Start</a> • <a href="projekte.html" class="link">Projekte</a> • <a href="kurse.html" class="link">Kurse</a> • <a href="kontakt.html" class="link">Kontakt</a> • <a href="impressum.html" class="link">Impressum</a></p>
+        <p>Made with ❤️ by Paul Maßmann • paul.massmann@web.de</p>
+        <p>© 2026 Paul Maßmann • Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
