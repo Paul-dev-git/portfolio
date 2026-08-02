@@ -39,7 +39,7 @@ const $ = (selector) => document.querySelector(selector);
 const elements = {
     name: $('.trial-course-name'), icon: $('.trial-course-icon'), step: $('.trial-step-number'),
     question: $('.trial-question'), hint: $('.trial-hint'), file: $('.trial-file-name'), slots: $('.code-slots'),
-    bank: $('.code-bank'), feedback: $('.trial-feedback'), progress: $('.trial-progress-bar'), score: $('.trial-score'),
+    bank: $('.code-bank'), feedback: $('.trial-feedback-box .trial-feedback'), progress: $('.trial-progress-bar'), score: $('.trial-score'),
     next: $('.trial-next'), reset: $('.trial-reset'), steps: $('.trial-steps'), explainer: $('.trial-explainer'),
     explainerText: $('.trial-explainer-text'), visual: $('.trial-concept-visual'), start: $('.trial-start'),
     builder: $('.code-builder'), actions: $('.trial-actions'), result: $('.trial-result'), resultCode: $('.trial-result code')
@@ -125,7 +125,7 @@ const renderChallenge = () => {
     elements.question.textContent = challenge.title;
     elements.hint.textContent = challenge.hint;
     elements.file.textContent = course.file;
-    elements.explainerText.textContent = course.intro;
+    elements.explainerText.textContent = challenge.title;
     elements.visual.replaceChildren(...course.visual.map((label, index) => {
         const part = document.createElement('span'); part.textContent = label; part.style.animationDelay = `${index * 0.12}s`; return part;
     }));
