@@ -3,33 +3,39 @@ const courses = {
         name: 'Webentwicklung', icon: '</>', file: 'index.html', visual: ['HTML', 'CSS', 'JS'],
         intro: 'Webseiten bestehen aus Struktur, Gestaltung und Interaktion. HTML beschreibt Inhalte, CSS gestaltet sie und JavaScript reagiert auf Nutzereingaben.',
         challenges: [
-            { title: 'Erstelle die HTML-Grundstruktur.', hint: 'Ordne die äußeren Elemente eines Dokuments von oben nach unten.', pieces: ['<!DOCTYPE html>', '<html>', '<body>', '</body>', '</html>'], solution: [0, 1, 2, 3, 4] },
-            { title: 'Baue einen Hauptbereich mit Inhalt.', hint: 'In einem main-Element liegen Überschrift und Beschreibung.', pieces: ['<h1>Mein Portfolio</h1>', '<p>Willkommen auf meiner Seite.</p>', '<main>', '</main>'], solution: [2, 0, 1, 3] },
-            { title: 'Gestalte einen Button mit CSS.', hint: 'Eine CSS-Regel beginnt mit dem Selektor und endet mit einer schließenden Klammer.', pieces: ['button {', 'background: royalblue;', 'color: white;', '}'], solution: [0, 1, 2, 3] },
-            { title: 'Reagiere auf einen Button-Klick.', hint: 'Zuerst wird das Element gesucht, dann wird ein click-Event registriert.', pieces: ["const button = document.querySelector('button');", "button.addEventListener('click', () => {", "  alert('Hallo!');", '});'], solution: [0, 1, 2, 3] },
-            { title: 'Mache ein Bild responsiv.', hint: 'Das Bild darf nicht breiter als sein Container werden.', pieces: ['img {', 'max-width: 100%;', 'height: auto;', '}'], solution: [0, 1, 2, 3] }
+            { title: 'HTML-Grundstruktur verstehen', explanation: 'Eine HTML-Datei braucht immer eine Grundstruktur: <!DOCTYPE html> sagt dem Browser, dass es HTML5 ist, <html> ist das äußerste Element, und <body> enthält den sichtbaren Inhalt. Diese Elemente werden verschachtelt (eins im anderen).', hint: 'Ordne die äußeren Elemente eines Dokuments von oben nach unten.', pieces: ['<!DOCTYPE html>', '<html>', '<body>', '</body>', '</html>'], solution: [0, 1, 2, 3, 4] },
+            { title: 'Semantisches HTML mit main', explanation: '<main> ist ein semantisches Element, das den Hauptinhalt einer Seite markiert. Semantische Elemente helfen Browsern und Suchmaschinen den Aufbau zu verstehen. <h1> ist die Hauptüberschrift und <p> ist ein Absatz. Sie werden in <main> verschachtelt.', hint: 'Das main-Element umhüllt Überschrift und Beschreibung.', pieces: ['<main>', '<h1>Mein Portfolio</h1>', '<p>Willkommen auf meiner Seite.</p>', '</main>'], solution: [0, 1, 2, 3] },
+            { title: 'CSS: Styling mit Selektoren', explanation: 'CSS-Regeln bestehen aus einem Selektor (z.B. "button") und geschweiften Klammern {}. Inside schreiben wir Eigenschaften und Werte. "background: royalblue;" setzt die Hintergrundfarbe, "color: white;" ändert die Textfarbe. Das Semikolon ist wichtig!', hint: 'Eine CSS-Regel: Selektor, offene Klammer, Eigenschaften, schließende Klammer.', pieces: ['button {', 'background: royalblue;', 'color: white;', '}'], solution: [0, 1, 2, 3] },
+            { title: 'JavaScript: Event-Listener', explanation: 'Mit JavaScript reagieren wir auf Nutzerinteraktionen. document.querySelector() findet ein Element, addEventListener() wartet auf ein Ereignis (wie "click"), und die Funktion => {} wird ausgeführt, wenn der Button geklickt wird. Das ermöglicht Interaktionen!', hint: 'Erst Element finden, dann Event-Listener hinzufügen.', pieces: ["const button = document.querySelector('button');", "button.addEventListener('click', () => {", "  alert('Hallo!');", '});'], solution: [0, 1, 2, 3] },
+            { title: 'Bilder responsiv machen', explanation: 'Responsive Design bedeutet, dass eine Webseite auf verschiedenen Bildschirmgrößen gut aussieht. max-width: 100% stellt sicher, dass ein Bild maximal so breit wie sein Container ist. height: auto erhält das richtige Verhältnis Breite zu Höhe.', hint: 'max-width und height: auto machen Bilder flexibel.', pieces: ['img {', 'max-width: 100%;', 'height: auto;', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Navigation mit Links', explanation: '<nav> ist ein semantisches Element für Navigationsbereiche. <a href=""> erzeugt Links. href gibt das Ziel an. Links führen zu anderen Seiten oder Bereichen derselben Seite. Sie sind das Rückgrat des Internets!', hint: 'nav für Navigation, a für Links mit href-Attribut.', pieces: ['<nav>', '<a href="index.html">Start</a>', '<a href="about.html">Über</a>', '</nav>'], solution: [0, 1, 2, 3] },
+            { title: 'Flexbox für Layouts', explanation: 'Flexbox ist eine moderne CSS-Methode für flexible Layouts. "display: flex" macht einen Container zum flex-Container. Seine Kinder (flex items) verteilen sich automatisch. justify-content: space-between verteilt Items mit Abstand. Das macht responsive Layouts einfach!', hint: 'display: flex, dann justify-content für Verteilung.', pieces: ['.container {', 'display: flex;', 'justify-content: space-between;', '}'], solution: [0, 1, 2, 3] }
         ]
     },
     game: {
         name: 'Game Development', icon: '⌘', file: 'Player.cs', visual: ['Scene', 'C#', 'Play'],
         intro: 'In Unity baust du Szenen aus GameObjects. Mit C#-Skripten gibst du ihnen Verhalten – beim Start, in jedem Frame oder bei einer Kollision.',
         challenges: [
-            { title: 'Erstelle ein Unity-Skript.', hint: 'Ein Skript nutzt UnityEngine und enthält eine Klasse mit geschweiften Klammern.', pieces: ['using UnityEngine;', 'public class Player : MonoBehaviour', '{', '}'], solution: [0, 1, 2, 3] },
-            { title: 'Starte dein Spiel mit einer Nachricht.', hint: 'Start wird einmal ausgeführt, wenn das GameObject aktiviert wird.', pieces: ['void Start()', '{', '  Debug.Log("Spiel gestartet!");', '}'], solution: [0, 1, 2, 3] },
-            { title: 'Bewege den Spieler nach rechts.', hint: 'Update läuft in jedem Frame. Time.deltaTime macht die Bewegung gleichmäßig.', pieces: ['void Update()', '{', '  transform.Translate(Vector3.right * Time.deltaTime);', '}'], solution: [0, 1, 2, 3] },
-            { title: 'Lege eine Sprungkraft an.', hint: 'Mit SerializeField ist die Variable im Unity Inspector sichtbar.', pieces: ['[SerializeField]', 'private float jumpForce = 5f;'], solution: [0, 1] },
-            { title: 'Prüfe eine Kollision.', hint: 'OnCollisionEnter erhält Informationen über das getroffene Objekt.', pieces: ['void OnCollisionEnter(Collision collision)', '{', '  Debug.Log("Treffer!");', '}'], solution: [0, 1, 2, 3] }
+            { title: 'Grundstruktur eines Unity-Skripts', explanation: 'Jedes C#-Skript in Unity braucht drei Dinge: "using UnityEngine;" importiert Unity-Funktionen, eine Klasse mit Klassenname und ": MonoBehaviour" (damit es an GameObjects gehört), und geschweifte Klammern {} um alles zu umhüllen. Das ist die Grundlage für alles!', hint: 'Ein Skript nutzt UnityEngine und enthält eine Klasse.', pieces: ['using UnityEngine;', 'public class Player : MonoBehaviour', '{', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Die Start-Methode', explanation: 'Start() ist eine spezielle Methode (Funktion) in Unity, die einmal beim Spielstart aufgeführt wird. Mit Debug.Log() können wir Nachrichten in der Console ausgeben – sehr praktisch zum Testen! void bedeutet, dass die Methode keinen Wert zurückgibt.', hint: 'Start wird einmal ausgeführt. Debug.Log druckt eine Nachricht.', pieces: ['void Start()', '{', '  Debug.Log("Spiel gestartet!");', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Die Update-Methode', explanation: 'Update() läuft in jedem Frame (ca. 60x pro Sekunde). Sie ist perfekt für Bewegungen und Inputs. Time.deltaTime ist super wichtig – es ist die Zeit seit dem letzten Frame. Mit Time.deltaTime wird Bewegung smooth und gleich schnell auf jedem PC!', hint: 'Update für jeden Frame. Time.deltaTime für smooth Bewegung.', pieces: ['void Update()', '{', '  transform.Translate(Vector3.right * Time.deltaTime);', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Variablen mit SerializeField', explanation: '[SerializeField] macht private Variablen im Unity-Inspector sichtbar – du kannst Werte dort einstellen ohne Code zu ändern! float ist ein Dezimalzahl-Typ, = 5f setzt Startwert auf 5. Das ist super für Game Designer!', hint: '[SerializeField] macht Variablen im Inspector anpassbar.', pieces: ['[SerializeField]', 'private float jumpForce = 5f;'], solution: [0, 1] },
+            { title: 'Kollisionen erkennen', explanation: 'OnCollisionEnter() wird aufgerufen, wenn zwei Physics-Objekte kollidieren. Der Parameter "Collision collision" enthält Infos über das getroffene Objekt (collision.gameObject.name z.B.). Das ist die Basis für Spielmechaniken wie Treffer, Punkte, Explosionen!', hint: 'OnCollisionEnter für Kollisionserkennung nutzen.', pieces: ['void OnCollisionEnter(Collision collision)', '{', '  Debug.Log("Treffer!");', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Input mit GetKeyDown', explanation: '"Input.GetKeyDown(KeyCode.Space)" prüft, ob eine Taste gerade gedrückt wurde. Das ist anders als GetKey() das prüft, ob eine Taste gehalten wird. Mit if-Bedingungen reagieren wir auf Eingaben – so entsteht die Spielersteuerung!', hint: 'Input.GetKeyDown prüft einen Tastendruck.', pieces: ['if (Input.GetKeyDown(KeyCode.Space))', '{', '  Debug.Log("Jump!");', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Kraft anwenden mit Rigidbody', explanation: 'Ein Rigidbody ist die Physics-Komponente. Mit rigidbody.velocity ändern wir die Geschwindigkeit direkt. Mit AddForce() fügen wir eine Kraft hinzu – das sieht natürlicher aus! new Vector3(0, jumpForce, 0) bedeutet: Kraft nach oben.', hint: 'Rigidbody.velocity oder AddForce für Bewegung.', pieces: ['Rigidbody rb = GetComponent<Rigidbody>();', 'rb.velocity = new Vector3(0, jumpForce, 0);'], solution: [0, 1] }
         ]
     },
     ios: {
         name: 'iOS App Development', icon: '', file: 'ContentView.swift', visual: ['SwiftUI', 'View', 'iPhone'],
         intro: 'SwiftUI baut Oberflächen aus kleinen Views. Ein State speichert Werte, und Buttons ändern diese Werte durch Aktionen.',
         challenges: [
-            { title: 'Importiere das SwiftUI-Framework.', hint: 'SwiftUI stellt die Bausteine für moderne iPhone-Oberflächen bereit.', pieces: ['import SwiftUI'], solution: [0] },
-            { title: 'Erstelle deine erste View.', hint: 'Eine SwiftUI-Ansicht ist eine Struktur, die das View-Protokoll erfüllt.', pieces: ['struct ContentView: View {', 'var body: some View {', '}', '}'], solution: [0, 1, 2, 3] },
-            { title: 'Zeige einen Text in deiner App an.', hint: 'Text ist ein SwiftUI-Baustein innerhalb von body.', pieces: ['var body: some View {', '  Text("Hallo, iOS!")', '}'], solution: [0, 1, 2] },
-            { title: 'Lege einen Zähler-Zustand an.', hint: 'Mit @State merkt sich deine View einen veränderbaren Wert.', pieces: ['@State private var count = 0'], solution: [0] },
-            { title: 'Erhöhe den Zähler beim Tippen.', hint: 'Ein Button erhält einen Titel und eine Aktion in geschweiften Klammern.', pieces: ['Button("Plus") {', '  count += 1', '}'], solution: [0, 1, 2] }
+            { title: 'SwiftUI-Framework importieren', explanation: '"import SwiftUI" ist die erste Zeile in einer iOS-App. Sie sagt: "Ich möchte SwiftUI benutzen". Import gibt uns Zugriff auf alle SwiftUI-Komponenten – Text, Button, Image usw. Ohne import funktioniert nichts!', hint: 'import SwiftUI gibt dir Zugriff auf alle SwiftUI-Tools.', pieces: ['import SwiftUI'], solution: [0] },
+            { title: 'Eine View-Struktur erstellen', explanation: '"struct" bedeutet Struktur – das ist ein Blueprint. "ContentView" ist der Name. ": View" bedeutet, diese Struktur folgt dem View-Protokoll – SwiftUI versteht jetzt, dass es eine grafische Oberfläche ist. Die geschweiften Klammern {} enthalten den gesamten Code der View.', hint: 'struct mit : View, dann body property.', pieces: ['struct ContentView: View {', 'var body: some View {', '}', '}'], solution: [0, 1, 2, 3] },
+            { title: 'Text auf dem Bildschirm anzeigen', explanation: '"var body: some View {" ist eine spezielle Eigenschaft in SwiftUI. Sie definiert, was angezeigt wird. "Text("Hallo, iOS!")" ist ein Text-Element. Alles zwischen den geschweiften Klammern wird auf dem Bildschirm sichtbar. Das ist das Herzstück jeder Oberfläche!', hint: 'body enthält was angezeigt wird.', pieces: ['var body: some View {', '  Text("Hallo, iOS!")', '}'], solution: [0, 1, 2] },
+            { title: 'Zustand mit @State speichern', explanation: '"@State" ist ein "Property Wrapper" – ein magisches Präfix, das SwiftUI sagt: "Dies ist eine Variable, die sich ändern kann, und wenn sie sich ändert, update die Oberfläche!" "private" bedeutet nur diese View kann es sehen. "var count = 0" deklariert eine Zahl-Variable mit Startwert 0. State ist das Gehirn der View!', hint: '@State private var speichert veränderbare Werte.', pieces: ['@State private var count = 0'], solution: [0] },
+            { title: 'Button mit Aktion', explanation: '"Button("Plus") {" erstellt einen Button mit Text "Plus" und geschweifte Klammern {} enthalten die Aktion. "count += 1" erhöht den Zähler um 1. Der Code in {} läuft, wenn der Button geklickt wird. Das verbindet Oberfläche mit Logik!', hint: 'Button mit Text und Aktion in Klammern.', pieces: ['Button("Plus") {', '  count += 1', '}'], solution: [0, 1, 2] },
+            { title: 'Text mit Variablen kombinieren', explanation: 'Text("Count: \\(count)") ist super clever! Der Backslash-Klammer-Syntax (\\()) lässt dich Variablen in Strings einbauen. Jedes Mal wenn count sich ändert (mit @State), aktualisiert sich der Text automatisch – das ist reaktives Programmieren!', hint: 'Mit \\(variable) Werte in Text einbauen.', pieces: ['Text("Count: \\(count)")'], solution: [0] },
+            { title: 'VStack für vertikale Anordnung', explanation: '"VStack {" bedeutet "Vertical Stack" – ordnet Elemente von oben nach unten. Alles zwischen den Klammern wird vertikal gestapelt. Es gibt auch HStack (horizontal) und ZStack (übereinander). Mit Stacks baust du komplexe Layouts!', hint: 'VStack ordnet Elemente vertikal.', pieces: ['VStack {', '  Text("Titel")', '  Button("Klick") {}', '}'], solution: [0, 1, 2, 3] }
         ]
     }
 };
@@ -40,9 +46,10 @@ const elements = {
     name: $('.trial-course-name'), icon: $('.trial-course-icon'), step: $('.trial-step-number'),
     question: $('.trial-question'), hint: $('.trial-hint'), file: $('.trial-file-name'), slots: $('.code-slots'),
     bank: $('.code-bank'), feedback: $('.trial-feedback-box .trial-feedback'), progress: $('.trial-progress-bar'), score: $('.trial-score'),
-    next: $('.trial-next'), reset: $('.trial-reset'), steps: $('.trial-steps'), explainer: $('.trial-explainer'),
+    next: $('.trial-next'), prev: $('.trial-prev'), steps: $('.trial-steps'), explainer: $('.trial-explainer'),
     explainerText: $('.trial-explainer-text'), visual: $('.trial-concept-visual'), start: $('.trial-start'),
-    builder: $('.code-builder'), actions: $('.trial-actions'), result: $('.trial-result'), resultCode: $('.trial-result code')
+    builder: $('.code-builder'), actions: $('.trial-actions'), result: $('.trial-result'), resultCode: $('.trial-result code'),
+    feedbackBox: $('.trial-feedback-box')
 };
 
 let challengeIndex = 0;
@@ -50,6 +57,8 @@ let score = 0;
 let activeSlot = null;
 let draggedPiece = null;
 let completed = false;
+let currentState = 'explain'; // 'explain' or 'task'
+let taskAnswered = false;
 
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
 const syntaxClass = (text) => {
@@ -125,17 +134,23 @@ const renderChallenge = () => {
     elements.question.textContent = challenge.title;
     elements.hint.textContent = challenge.hint;
     elements.file.textContent = course.file;
-    elements.explainerText.textContent = challenge.title;
+    elements.explainerText.textContent = challenge.explanation || challenge.title;
     elements.visual.replaceChildren(...course.visual.map((label, index) => {
         const part = document.createElement('span'); part.textContent = label; part.style.animationDelay = `${index * 0.12}s`; return part;
     }));
     elements.feedback.textContent = '';
     elements.feedback.className = 'trial-feedback';
+    elements.feedbackBox.hidden = true;
     elements.progress.style.width = `${(challengeIndex / course.challenges.length) * 100}%`;
     elements.explainer.hidden = false;
     elements.builder.hidden = true;
-    elements.actions.hidden = true;
+    elements.actions.hidden = false;
     elements.result.hidden = true;
+    currentState = 'explain';
+    taskAnswered = false;
+    elements.next.textContent = 'Weiter →';
+    elements.next.disabled = false;
+    elements.prev.disabled = challengeIndex === 0;
     renderSteps();
 };
 
@@ -143,6 +158,11 @@ const showBuilder = () => {
     elements.explainer.hidden = true;
     elements.builder.hidden = false;
     elements.actions.hidden = false;
+    elements.feedbackBox.hidden = true;
+    currentState = 'task';
+    taskAnswered = false;
+    elements.next.textContent = 'Code prüfen';
+    elements.next.disabled = false;
     renderBuilder();
 };
 
@@ -163,17 +183,25 @@ const checkAnswer = () => {
         if (piece) piece.classList.add(Number(piece.dataset.index) === challenge.solution[position] ? 'answer-correct' : 'answer-wrong');
     });
     showResult();
+    elements.feedbackBox.hidden = false;
     if (!correct) {
         elements.feedback.textContent = complete ? 'Fast! Vergleiche die Reihenfolge mit der Erklärung und probiere es erneut.' : 'Dein Ergebnis zeigt noch fehlende Bausteine. Ergänze sie und prüfe erneut.';
         elements.feedback.className = 'trial-feedback wrong';
+        elements.feedbackBox.style.borderLeftColor = '#e05a62';
+        elements.feedbackBox.style.background = 'rgb(224 90 98 / 0.1)';
+        elements.next.textContent = 'Erneut versuchen';
+        elements.next.disabled = false;
         return;
     }
+    taskAnswered = true;
     score += 20;
     elements.score.textContent = score;
     elements.feedback.textContent = 'Perfekt! Das ist genau der Code, den du gerade gebaut hast.';
     elements.feedback.className = 'trial-feedback correct';
-    elements.next.textContent = challengeIndex === course.challenges.length - 1 ? 'Probekurs abschließen' : 'Nächste Challenge';
-    elements.next.dataset.ready = 'true';
+    elements.feedbackBox.style.borderLeftColor = '#2ecc71';
+    elements.feedbackBox.style.background = 'rgb(46 204 113 / 0.1)';
+    elements.next.textContent = challengeIndex === course.challenges.length - 1 ? 'Weiter →' : 'Weiter →';
+    elements.next.disabled = false;
     elements.progress.style.width = `${((challengeIndex + 1) / course.challenges.length) * 100}%`;
 };
 
@@ -192,12 +220,26 @@ const finish = () => {
 };
 
 elements.start.addEventListener('click', showBuilder);
-elements.reset.addEventListener('click', renderBuilder);
 elements.next.addEventListener('click', () => {
     if (completed) { location.href = 'kontakt.html'; return; }
-    if (elements.next.dataset.ready === 'true') {
-        challengeIndex += 1;
-        challengeIndex < course.challenges.length ? renderChallenge() : finish();
-    } else checkAnswer();
+    
+    if (currentState === 'explain') {
+        showBuilder();
+    } else if (currentState === 'task') {
+        if (taskAnswered) {
+            challengeIndex += 1;
+            challengeIndex < course.challenges.length ? renderChallenge() : finish();
+        } else {
+            checkAnswer();
+        }
+    }
 });
+
+elements.prev.addEventListener('click', () => {
+    if (challengeIndex > 0) {
+        challengeIndex -= 1;
+        renderChallenge();
+    }
+});
+
 renderChallenge();
