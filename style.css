@@ -46,6 +46,9 @@
     --color-shadow: var(--color-shadow-light);
 }
 
+/* Ensure [hidden] removes element from layout so empty containers do not occupy space */
+[hidden] { display: none !important; }
+
 /* =========================================================
    2. Dunkelmodus
    ========================================================= */
@@ -3179,6 +3182,7 @@ img {
 .trial-start:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgb(29 98 227 / 0.3);
+    color: white;
 }
 
 .code-builder {
@@ -3308,12 +3312,13 @@ img {
     width: 100%;
     min-height: 42px; 
     padding: 10px 14px; 
-    white-space: pre-wrap;
-    overflow: visible;
-    text-overflow: clip;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: block;
     word-wrap: break-word;
     word-break: break-word;
+    line-height: 1.4;
 }
 
 /* Syntax highlighting colors */
@@ -3408,8 +3413,14 @@ img {
 }
 
 .trial-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 28px; }
-.trial-reset { margin: 16px 0 0; padding: 13px 17px; background: transparent; }
-.trial-next { margin: 16px 0 0; }
+.trial-prev, .trial-next { margin: 16px 0 0; padding: 13px 17px; }
+.trial-prev { background: transparent; }
+.trial-next { }
+
+.trial-prev:disabled, .trial-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 @media (max-width: 900px) {
     .trial-shell { width: min(760px, calc(100% - 32px)); padding-top: 56px; }

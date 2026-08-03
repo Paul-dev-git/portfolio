@@ -1,9 +1,9 @@
 const courses = {
     web: {
-        name: 'Webentwicklung', icon: '</>', file: 'index.html', visual: ['HTML', 'CSS', 'JS'],
-        intro: 'Webseiten bestehen aus Struktur, Gestaltung und Interaktion. HTML beschreibt Inhalte, CSS gestaltet sie und JavaScript reagiert auf Nutzereingaben.',
+        name: 'Webentwicklung', icon: '>_', file: 'index.html', visual: ['HTML', 'CSS', 'JS'],
+        intro: '',
         challenges: [
-            { title: 'HTML-Grundstruktur verstehen', explanation: 'Eine HTML-Datei braucht immer eine Grundstruktur: <!DOCTYPE html> sagt dem Browser, dass es HTML5 ist, <html> ist das äußerste Element, und <body> enthält den sichtbaren Inhalt. Diese Elemente werden verschachtelt (eins im anderen).', hint: 'Ordne die äußeren Elemente eines Dokuments von oben nach unten.', pieces: ['<!DOCTYPE html>', '<html>', '<body>', '</body>', '</html>'], solution: [0, 1, 2, 3, 4] },
+            { title: 'Aufbau von HTML-Elemente', explanation: 'HTML gibt einer Website ihre Struktur. Überschriften werden mit dem Element <h1> erstellt, normale Texte mit dem Element <p>. Ein HTML-Element besteht aus einem öffnenden Tag <element>, dem Inhalt und einem schließenden Tag </element>. Erstelle eine große Überschrift mit dem Text "Meine Website“ gefolgt von einem Textelement "kleine Beschreibung".', hint: 'Ordne die Bausteine in der richtigen Reihenfolge.', pieces: ['<p>', 'Meine Website', '</h1>', '</p>', '<h1>', 'kleine Beschreibung'], solution: [4, 1, 2, 0, 5, 3] },
             { title: 'Semantisches HTML mit main', explanation: '<main> ist ein semantisches Element, das den Hauptinhalt einer Seite markiert. Semantische Elemente helfen Browsern und Suchmaschinen den Aufbau zu verstehen. <h1> ist die Hauptüberschrift und <p> ist ein Absatz. Sie werden in <main> verschachtelt.', hint: 'Das main-Element umhüllt Überschrift und Beschreibung.', pieces: ['<main>', '<h1>Mein Portfolio</h1>', '<p>Willkommen auf meiner Seite.</p>', '</main>'], solution: [0, 1, 2, 3] },
             { title: 'CSS: Styling mit Selektoren', explanation: 'CSS-Regeln bestehen aus einem Selektor (z.B. "button") und geschweiften Klammern {}. Inside schreiben wir Eigenschaften und Werte. "background: royalblue;" setzt die Hintergrundfarbe, "color: white;" ändert die Textfarbe. Das Semikolon ist wichtig!', hint: 'Eine CSS-Regel: Selektor, offene Klammer, Eigenschaften, schließende Klammer.', pieces: ['button {', 'background: royalblue;', 'color: white;', '}'], solution: [0, 1, 2, 3] },
             { title: 'JavaScript: Event-Listener', explanation: 'Mit JavaScript reagieren wir auf Nutzerinteraktionen. document.querySelector() findet ein Element, addEventListener() wartet auf ein Ereignis (wie "click"), und die Funktion => {} wird ausgeführt, wenn der Button geklickt wird. Das ermöglicht Interaktionen!', hint: 'Erst Element finden, dann Event-Listener hinzufügen.', pieces: ["const button = document.querySelector('button');", "button.addEventListener('click', () => {", "  alert('Hallo!');", '});'], solution: [0, 1, 2, 3] },
@@ -14,7 +14,7 @@ const courses = {
     },
     game: {
         name: 'Game Development', icon: '⌘', file: 'Player.cs', visual: ['Scene', 'C#', 'Play'],
-        intro: 'In Unity baust du Szenen aus GameObjects. Mit C#-Skripten gibst du ihnen Verhalten – beim Start, in jedem Frame oder bei einer Kollision.',
+        intro: '',
         challenges: [
             { title: 'Grundstruktur eines Unity-Skripts', explanation: 'Jedes C#-Skript in Unity braucht drei Dinge: "using UnityEngine;" importiert Unity-Funktionen, eine Klasse mit Klassenname und ": MonoBehaviour" (damit es an GameObjects gehört), und geschweifte Klammern {} um alles zu umhüllen. Das ist die Grundlage für alles!', hint: 'Ein Skript nutzt UnityEngine und enthält eine Klasse.', pieces: ['using UnityEngine;', 'public class Player : MonoBehaviour', '{', '}'], solution: [0, 1, 2, 3] },
             { title: 'Die Start-Methode', explanation: 'Start() ist eine spezielle Methode (Funktion) in Unity, die einmal beim Spielstart aufgeführt wird. Mit Debug.Log() können wir Nachrichten in der Console ausgeben – sehr praktisch zum Testen! void bedeutet, dass die Methode keinen Wert zurückgibt.', hint: 'Start wird einmal ausgeführt. Debug.Log druckt eine Nachricht.', pieces: ['void Start()', '{', '  Debug.Log("Spiel gestartet!");', '}'], solution: [0, 1, 2, 3] },
@@ -27,7 +27,7 @@ const courses = {
     },
     ios: {
         name: 'iOS App Development', icon: '', file: 'ContentView.swift', visual: ['SwiftUI', 'View', 'iPhone'],
-        intro: 'SwiftUI baut Oberflächen aus kleinen Views. Ein State speichert Werte, und Buttons ändern diese Werte durch Aktionen.',
+        intro: '',
         challenges: [
             { title: 'SwiftUI-Framework importieren', explanation: '"import SwiftUI" ist die erste Zeile in einer iOS-App. Sie sagt: "Ich möchte SwiftUI benutzen". Import gibt uns Zugriff auf alle SwiftUI-Komponenten – Text, Button, Image usw. Ohne import funktioniert nichts!', hint: 'import SwiftUI gibt dir Zugriff auf alle SwiftUI-Tools.', pieces: ['import SwiftUI'], solution: [0] },
             { title: 'Eine View-Struktur erstellen', explanation: '"struct" bedeutet Struktur – das ist ein Blueprint. "ContentView" ist der Name. ": View" bedeutet, diese Struktur folgt dem View-Protokoll – SwiftUI versteht jetzt, dass es eine grafische Oberfläche ist. Die geschweiften Klammern {} enthalten den gesamten Code der View.', hint: 'struct mit : View, dann body property.', pieces: ['struct ContentView: View {', 'var body: some View {', '}', '}'], solution: [0, 1, 2, 3] },
@@ -47,7 +47,7 @@ const elements = {
     question: $('.trial-question'), hint: $('.trial-hint'), file: $('.trial-file-name'), slots: $('.code-slots'),
     bank: $('.code-bank'), feedback: $('.trial-feedback-box .trial-feedback'), progress: $('.trial-progress-bar'), score: $('.trial-score'),
     next: $('.trial-next'), prev: $('.trial-prev'), steps: $('.trial-steps'), explainer: $('.trial-explainer'),
-    explainerText: $('.trial-explainer-text'), visual: $('.trial-concept-visual'), start: $('.trial-start'),
+    explainerText: $('.trial-explainer-text'), visual: $('.trial-concept-visual'),
     builder: $('.code-builder'), actions: $('.trial-actions'), result: $('.trial-result'), resultCode: $('.trial-result code'),
     feedbackBox: $('.trial-feedback-box')
 };
@@ -185,7 +185,7 @@ const checkAnswer = () => {
     showResult();
     elements.feedbackBox.hidden = false;
     if (!correct) {
-        elements.feedback.textContent = complete ? 'Fast! Vergleiche die Reihenfolge mit der Erklärung und probiere es erneut.' : 'Dein Ergebnis zeigt noch fehlende Bausteine. Ergänze sie und prüfe erneut.';
+        elements.feedback.textContent = complete ? '🧐 Fast! Dein Code ist nah dran.' : '🚧 Fast vollständig! Verwende alle Teile, um den Code abzuschließen.';
         elements.feedback.className = 'trial-feedback wrong';
         elements.feedbackBox.style.borderLeftColor = '#e05a62';
         elements.feedbackBox.style.background = 'rgb(224 90 98 / 0.1)';
@@ -196,7 +196,7 @@ const checkAnswer = () => {
     taskAnswered = true;
     score += 20;
     elements.score.textContent = score;
-    elements.feedback.textContent = 'Perfekt! Das ist genau der Code, den du gerade gebaut hast.';
+    elements.feedback.textContent = '💚 Perfekt! Dein Code funktioniert.';
     elements.feedback.className = 'trial-feedback correct';
     elements.feedbackBox.style.borderLeftColor = '#2ecc71';
     elements.feedbackBox.style.background = 'rgb(46 204 113 / 0.1)';
@@ -207,19 +207,18 @@ const checkAnswer = () => {
 
 const finish = () => {
     completed = true;
-    elements.question.textContent = 'Du hast den Probekurs geschafft! 🎉';
-    elements.hint.textContent = `Du hast ${score} Punkte gesammelt und wichtige Grundlagen aus ${course.name} ausprobiert.`;
+    elements.question.textContent = 'Du hast den Probekurs abgeschlossen!';
+    elements.hint.textContent = `Du hast ${score} Punkte gesammelt und wichtige Grundlagen aus der ${course.name} gelernt.`;
     elements.builder.hidden = true;
     elements.explainer.hidden = true;
     elements.result.hidden = true;
-    elements.feedback.textContent = 'Bereit, dein eigenes Projekt zu bauen?';
+    elements.feedback.textContent = 'Du hast Interesse, Programmieren praxisnah zu lernen und deine eigenen Projekte mit persönlichem Coaching umzusetzen?';
     elements.feedback.className = 'trial-feedback correct';
     elements.next.textContent = 'Kurs anfragen';
     elements.reset.hidden = true;
     renderSteps();
 };
 
-elements.start.addEventListener('click', showBuilder);
 elements.next.addEventListener('click', () => {
     if (completed) { location.href = 'kontakt.html'; return; }
     

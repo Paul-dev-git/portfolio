@@ -141,13 +141,15 @@
         Kurs Anfragen
         <img src="assets/images/arrow-right-solid-full.svg" alt="Arrow Icon" class="courses-button-icon"/>
     </a>
-    <button class="courses-button-2">
+    <button class="courses-button-2" onclick="document.getElementById('aktuelle_kurse').scrollIntoView({
+    behavior: 'smooth'
+})">
         Kurse Erkunden
         <div class="arrow-icon"></div>
     </button>
     </div>
 
-    <section class="course-offers" aria-labelledby="course-offers-title">
+    <section class="course-offers" aria-labelledby="course-offers-title" id="aktuelle_kurse">
         <div class="course-offers-heading">
             <p class="course-eyebrow">AKTUELLE ANGEBOTE</p>
             <h2 id="course-offers-title">Starte mit einem <span class="blue">Kurs.</span></h2>
@@ -161,10 +163,10 @@
                     <span class="course-level">EINSTEIGER</span>
                 </div>
                 <h3>Webentwicklung mit HTML, CSS &amp; JavaScript</h3>
-                <p>Baue moderne, responsive und interaktive Webseiten von Grund auf.</p>
+                <p>Nach diesem Kurs wirst du in der Lage sein, deine eigenen responsiven und interaktiven Webseiten zu bauen.</p>
                 <ul class="course-topics">
                     <li>HTML, CSS &amp; JavaScript</li>
-                    <li>Responsive Design</li>
+                    <li>Responsives Design</li>
                     <li>Deine eigene Website</li>
                 </ul>
                 <div class="course-card-footer"><span>6 Termine</span><a href="kontakt.html">Kurs anfragen <span class="arrow-icon-blue" aria-hidden="true"></span></a></div>
@@ -176,12 +178,12 @@
                     <img src="assets/images/unity-logo.png" alt="Unity Logo" class="course-logo">
                     <span class="course-level">EINSTEIGER</span>
                 </div>
-                <h3>Spiele entwickeln mit Unity &amp; C#</h3>
-                <p>Entwickle dein erstes eigenes 2D-Spiel und verstehe die wichtigsten Game-Dev-Grundlagen.</p>
+                <h3>Spiele entwickeln mit Unity in C#</h3>
+                <p>Entwickle dein erstes Spiel und lerne die Programmiersprache C# für Game Development.</p>
                 <ul class="course-topics">
-                    <li>Unity Editor verstehen</li>
-                    <li>Gameplay mit C#</li>
-                    <li>Eigenes Spiel veröffentlichen</li>
+                    <li>Ein Konzept entwickeln</li>
+                    <li>Gameplay mit C# programmieren</li>
+                    <li>Dein erstes Spiel veröffentlichen</li>
                 </ul>
                 <div class="course-card-footer"><span>8 Termine</span><a href="kontakt.html">Kurs anfragen <span class="arrow-icon-blue" aria-hidden="true"></span></a></div>
                 <a class="trial-course-button" href="probekurs.html?kurs=game">Probekurs <span class="arrow-icon" aria-hidden="true"></span></a>
@@ -193,11 +195,11 @@
                     <span class="course-level">EINSTEIGER</span>
                 </div>
                 <h3>iOS Apps entwickeln mit Swift</h3>
-                <p>Entwirf und entwickle deine erste native iPhone-App mit Swift und SwiftUI.</p>
+                <p>Entwickle deine erste native iPhone-App mit Swift.</p>
                 <ul class="course-topics">
-                    <li>Swift &amp; SwiftUI</li>
-                    <li>App-Oberflächen bauen</li>
-                    <li>Deine App testen</li>
+                    <li>Eine Idee validieren</li>
+                    <li>Einen MVP entwickeln</li>
+                    <li>Deine erste App mit Swift &amp; SwiftUI</li>
                 </ul>
                 <div class="course-card-footer"><span>8 Termine</span><a href="kontakt.html">Kurs anfragen <span class="arrow-icon-blue" aria-hidden="true"></span></a></div>
                 <a class="trial-course-button" href="probekurs.html?kurs=ios">Probekurs <span class="arrow-icon" aria-hidden="true"></span></a>
