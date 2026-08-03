@@ -755,6 +755,24 @@ body::before{
     height: 50px;
     padding: 10px 22px;
     align-self: center;
+    width: 35%;
+    margin-right: -70px;
+}
+
+.link {
+    transition: transform 0.2s ease-in-out;
+}
+
+.link:hover {
+    transform: scale(1.05);
+}
+
+.courses-button {
+    transition: transform 0.2s ease-in-out;
+}
+
+.courses-button:hover {
+    transform: scale(1.05);
 }
 
 #low{
@@ -1284,7 +1302,7 @@ button:hover .live-button-icon{
     grid-template-rows: auto auto;
     column-gap: 10px;
     row-gap: 6px;
-    width: 250px;
+    width: 265px;
     background-color: var(--second-surface-color);
     padding: 20px;
     border-radius: 25px;
