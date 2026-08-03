@@ -2910,9 +2910,13 @@ img {
 .trial-hint {
     min-height: 48px;
     margin: 15px 0 28px;
-    color: var(--text-color);
+    color: darkorange;
     font-size: 15px;
     line-height: 1.6;
+    background: rgb(255 205 42 / 0.25);
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid orange;
 }
 
 .trial-options {
@@ -3297,6 +3301,18 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
     transition: all 0.2s ease;
+}
+
+.code-slot {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.code-piece.placed {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .code-piece:hover,
