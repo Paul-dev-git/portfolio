@@ -2727,7 +2727,6 @@ img {
     object-fit: contain;
     padding: 8px;
     border-radius: 14px;
-    background: rgb(255 255 255 / 0.24);
 }
 
 .course-level {
@@ -2738,6 +2737,7 @@ img {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.05em;
+    margin-right: 0;
 }
 
 .course-card h3 {
@@ -3106,7 +3106,7 @@ img {
             ),
             rgba(255, 255, 255, 0.05);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--color-border);
 
     backdrop-filter: blur(15px);
 
@@ -3245,6 +3245,155 @@ img {
     }
 }
 
+.course-pricing {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(77, 139, 255, 0.14),
+                    rgba(77, 139, 255, 0.04)
+            );
+
+    border: 1px solid rgba(77, 139, 255, 0.3);
+}
+
+
+.price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.price-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+
+    color: #4d8bff;
+}
+
+
+.price-old {
+    font-size: 12px;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+.price-main {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    margin: 8px 0 15px;
+}
+
+
+.price-main strong {
+    font-size: 38px;
+    line-height: 1;
+}
+
+
+.price-main span {
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+
+.pro-features {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+.pro-features li {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    opacity: 0.8;
+}
+
+
+.pro-features li::before {
+    content: "✓";
+    margin-right: 8px;
+
+    color: #4d8bff;
+    font-weight: bold;
+}
+
+.discount-badge {
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(46,204,113,0.15);
+    color: #22a45a;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.course-free-version {
+    margin-top: 25px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+
+    border-radius: 18px;
+
+    background: rgba(46, 204, 113, 0.08);
+
+    border: 1px solid rgba(46, 204, 113, 0.25);
+}
+
+
+.free-version-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #22a45a;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+
+.free-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: rgba(46, 204, 113, 0.18);
+
+    font-size: 13px;
+}
+
+
+.course-free-version p {
+    margin: 10px 0 0;
+
+    font-size: 14px;
+
+    opacity: 0.75;
+}
 
 .trial-option:hover:not(:disabled),
 .trial-option.selected {
