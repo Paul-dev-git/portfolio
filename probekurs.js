@@ -186,7 +186,7 @@ const checkAnswer = () => {
     if (!correct) {
         elements.feedback.textContent = complete ? '🧐 Fast! Dein Code ist nah dran.' : '🚧 Fast vollständig! Verwende alle Teile, um den Code abzuschließen.';
         elements.feedback.className = 'trial-feedback wrong';
-        elements.feedbackBox.style.borderLeftColor = '#e05a62';
+        elements.feedbackBox.style.borderColor = '#e05a62';
         elements.feedbackBox.style.background = 'rgb(224 90 98 / 0.1)';
         elements.next.textContent = 'Erneut versuchen';
         elements.next.disabled = false;
@@ -197,7 +197,7 @@ const checkAnswer = () => {
     elements.score.textContent = score;
     elements.feedback.textContent = '💚 Perfekt! Dein Code funktioniert.';
     elements.feedback.className = 'trial-feedback correct';
-    elements.feedbackBox.style.borderLeftColor = '#2ecc71';
+    elements.feedbackBox.style.borderColor = '#2ecc71';
     elements.feedbackBox.style.background = 'rgb(46 204 113 / 0.1)';
     elements.next.textContent = challengeIndex === course.challenges.length - 1 ? 'Weiter →' : 'Weiter →';
     elements.next.disabled = false;
